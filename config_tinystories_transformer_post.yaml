@@ -1,0 +1,22 @@
+# Train only on TinyStories with an optimized-ish Transformer config.
+model_type: transformer
+tinystories_weight: 1.0
+input_files: []              # no extra local files; train only on TinyStories
+epochs: 30
+learning_rate: 0.0005
+max_lr: 0.001
+batch_size: 64
+embed_size: 512
+n_heads: 8
+n_blocks: 8
+block_size: 256
+norm: post
+use_bf16: true
+use_flash_attn: true
+weight_tying: true
+kgram_use_embedding: false
+max_steps_per_epoch: 1000
+save_ckpt_steps: 500
+ckpt_dir: ckpt/tinystories_transformer_post_norm
+prompt: "Once upon a"
+use_wandb: true

@@ -1,0 +1,39 @@
+# Config optimized based on the TinyStories paper's best-performing models (Figure 4).
+# This uses the 768-dim, 8-layer model .
+
+model_type: transformer
+tinystories_weight: 1.0
+input_files: []              # Train only on TinyStories
+
+# --- Training Hyperparameters ---
+epochs: 30
+learning_rate: 0.0002        # A slightly safer LR for this model size
+max_lr: 0.001                # 10x the base LR is a good OneCycle policy
+batch_size: 32               # Smaller batch size due to larger model
+
+# --- Model Architecture (Based on Paper [cite: 344, 57]) ---
+embed_size: 768              # "Hidden size" = 768, per the best model in Fig 4
+n_heads: 8                   # 8 heads is a good default, matches paper's tests
+n_blocks: 8                  # "Layer" = 8, per the best model in Fig 4
+block_size: 512              # Match "context length 512" from paper 
+norm: pre                    # Pre-norm for more stable training
+weight_tying: true           # Good for small models
+
+# --- Optimizer ---
+optimizer: adam             # Use Adam
+#weight_decay: 0.01           # Typical starting WD; adjust as needed
+
+# EMA (enabled for this config)
+#ema_decay: 0.999             # Enable EMA with decay 0.999 (set <1.0 to enable)
+
+# --- Performance & Logging ---
+use_bf16: false
+use_amp: true
+use_flash_attn: true
+# Train full epochs: don't limit steps per epoch (set to null for full pass)
+max_steps_per_epoch: null
+# Disable per-step checkpointing (we save at epoch end)
+save_ckpt_steps: 0
+ckpt_dir: ckpt/tinystories_transformer_768_8L  # New dir for the new model
+prompt: "Once upon a"
+use_wandb: true

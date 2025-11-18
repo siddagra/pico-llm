@@ -1,0 +1,23 @@
+# config_3seqs.yaml
+# Lightweight config for 3seqs.txt sanity check
+
+# Data settings (as requested)
+tinystories_weight: 0.0
+input_files: ["3seqs.txt"]
+prompt: "0 1 2 3 4"
+
+# Lightweight model settings
+embed_size: 32
+block_size: 32
+batch_size: 128
+max_lr: 0.001
+kgram_k: 3
+num_inner_mlp_layers: 1
+
+# Training settings
+max_steps_per_epoch: 10  # Run for only 10 steps
+save_ckpt_steps: 9       
+use_bf16: true
+ckpt_dir: "ckpt_3seqs"
+log_dir: "runs_3seqs"
+use_wandb: true
