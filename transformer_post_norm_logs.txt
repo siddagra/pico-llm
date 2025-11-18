@@ -1,22 +1,31 @@
-2025-11-17 00:49:29.650657: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-11-17 00:49:29.668375: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-11-17 01:48:08.185531: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-17 01:48:08.202471: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1763340569.689914    3698 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1763340569.696479    3698 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1763340569.713485    3698 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1763340569.713517    3698 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1763340569.713520    3698 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1763340569.713523    3698 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-11-17 00:49:29.718539: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1763344088.224148    1260 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1763344088.230631    1260 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1763344088.247109    1260 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763344088.247143    1260 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763344088.247146    1260 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763344088.247149    1260 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-17 01:48:08.252043: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-Loading config from config_tinystories_transformer.yaml...
+Loading config from config_tinystories_transformer_post.yaml...
 Loaded environment variables from .env
+wandb: No netrc file found, creating one.
 wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
 wandb: Currently logged in as: sa6740 (sa6740-new-york-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
 wandb: logged in using key from environment
 Using device: cuda:0, block_size=256, kgram_k=3, chunk_size=1, embed_size=512
-Transformer params: n_heads=8, n_blocks=8, norm=pre
+Transformer params: n_heads=8, n_blocks=8, norm=post
 Loading TinyStories from huggingface with weight=1.0...
+README.md: 1.06kB [00:00, 5.57MB/s]
+data/train-00000-of-00004-2d5a1467fff108(…): 100% 249M/249M [00:02<00:00, 85.4MB/s]
+data/train-00001-of-00004-5852b56a2bd28f(…): 100% 248M/248M [00:01<00:00, 156MB/s]
+data/train-00002-of-00004-a26307300439e9(…): 100% 246M/246M [00:01<00:00, 217MB/s]
+data/train-00003-of-00004-d243063613e5a0(…): 100% 248M/248M [00:06<00:00, 37.9MB/s]
+data/validation-00000-of-00001-869c898b5(…): 100% 9.99M/9.99M [00:02<00:00, 4.37MB/s]
+Generating train split: 100% 2119719/2119719 [00:06<00:00, 346673.16 examples/s]
+Generating validation split: 100% 21990/21990 [00:00<00:00, 350516.26 examples/s]
 Vocab size: 50257
 TinyStories sequences: 49988
 No custom input files provided.
@@ -74,711 +83,746 @@ Data split: 44989 train, 4999 val
 === Training model: transformer ===
 Number of trainable parameters: 51.12M
 wandb: ⢿ Waiting for wandb.init()...
-wandb: ⣻ Waiting for wandb.init()...
-wandb: ⣽ setting up run myj7c808 (0.2s)
-wandb: ⣾ setting up run myj7c808 (0.2s)
-wandb: ⣷ setting up run myj7c808 (0.2s)
+wandb: ⣻ setting up run uw15d58v (0.2s)
+wandb: ⣽ setting up run uw15d58v (0.2s)
 wandb: Tracking run with wandb version 0.22.3
-wandb: Run data is saved locally in /content/wandb/run-20251117_004959-myj7c808
+wandb: Run data is saved locally in /content/wandb/run-20251117_014913-uw15d58v
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run transformer_20251117_004959
+wandb: Syncing run transformer_20251117_014913
 wandb: ⭐️ View project at https://wandb.ai/sa6740-new-york-university/pico-llm
-wandb: 🚀 View run at https://wandb.ai/sa6740-new-york-university/pico-llm/runs/myj7c808
+wandb: 🚀 View run at https://wandb.ai/sa6740-new-york-university/pico-llm/runs/uw15d58v
 
 [transformer] Generating sample text (greedy) at epoch=1, step=1...
  Greedy Sample: Once upon a a a a a a a a a a a a a a a a a a a a a
 [transformer] Generating sample text (top-p=0.95) at epoch=1, step=1...
  Top-p (p=0.95) Sample: Once upon a a a a a a a a a a a a a a a a a a a a a
 
-[transformer] Epoch 1/30, Step 100/703 (global step: 100) Partial Avg Loss: 87.7512 lr=4.029247e-05
-[transformer] Epoch 1/30, Step 200/703 (global step: 200) Partial Avg Loss: 40.1002 lr=4.116952e-05
-[transformer] Epoch 1/30, Step 300/703 (global step: 300) Partial Avg Loss: 34.1956 lr=4.263007e-05
-[transformer] Epoch 1/30, Step 400/703 (global step: 400) Partial Avg Loss: 30.7919 lr=4.467236e-05
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step500.pt
-[transformer] Epoch 1/30, Step 500/703 (global step: 500) Partial Avg Loss: 28.1727 lr=4.729390e-05
+[transformer] Epoch 1/30, Step 100/703 (global step: 100) Partial Avg Loss: 54.2563 lr=4.029247e-05
+[transformer] Epoch 1/30, Step 200/703 (global step: 200) Partial Avg Loss: 28.3381 lr=4.116952e-05
+[transformer] Epoch 1/30, Step 300/703 (global step: 300) Partial Avg Loss: 24.5691 lr=4.263007e-05
+[transformer] Epoch 1/30, Step 400/703 (global step: 400) Partial Avg Loss: 22.1891 lr=4.467236e-05
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step500.pt
+[transformer] Epoch 1/30, Step 500/703 (global step: 500) Partial Avg Loss: 21.1306 lr=4.729390e-05
 
 [transformer] Generating sample text (greedy) at epoch=1, step=500...
  Greedy Sample: Once upon a a a a a a a a a a a a a a a a a a a a a
 [transformer] Generating sample text (top-p=0.95) at epoch=1, step=500...
- Top-p (p=0.95) Sample: Once upon a a a a a aRPGRPGRPGRPGRPGRPGRPGRPGRPGRPGRPGRPGRPGRPGRPG
+ Top-p (p=0.95) Sample: Once upon a whilst a a bo it DishSLUp edit onthusounding a aStone,, a!!
 
-[transformer] Epoch 1/30, Step 600/703 (global step: 600) Partial Avg Loss: 26.2880 lr=5.049147e-05
-[transformer] Epoch 1/30, Step 700/703 (global step: 700) Partial Avg Loss: 24.9275 lr=5.426120e-05
-[transformer] *** End of Epoch 1 *** Avg Train Loss: 38.8265
+[transformer] Epoch 1/30, Step 600/703 (global step: 600) Partial Avg Loss: 20.7535 lr=5.049147e-05
+[transformer] Epoch 1/30, Step 700/703 (global step: 700) Partial Avg Loss: 20.1590 lr=5.426120e-05
+[transformer] *** End of Epoch 1 *** Avg Train Loss: 27.3106
 [transformer] Running validation for epoch 1...
-[transformer] *** Epoch 1 Validation Loss ***: 24.1060  Acc: 0.3061
+[transformer] *** Epoch 1 Validation Loss ***: 20.2864  Acc: 0.2997
 --------------------------------------------------
-[transformer] Epoch 2/30, Step 100/703 (global step: 803) Partial Avg Loss: 23.9391 lr=5.873733e-05
-[transformer] Epoch 2/30, Step 200/703 (global step: 903) Partial Avg Loss: 23.0020 lr=6.365366e-05
+[transformer] Epoch 2/30, Step 100/703 (global step: 803) Partial Avg Loss: 20.0560 lr=5.873733e-05
+[transformer] Epoch 2/30, Step 200/703 (global step: 903) Partial Avg Loss: 19.8746 lr=6.365366e-05
 
-[transformer] Generating sample text (greedy) at epoch=2, step=294...
+[transformer] Generating sample text (greedy) at epoch=2, step=293...
  Greedy Sample: Once upon a a a a a a a a a a a a a a a a a a a a a
-[transformer] Generating sample text (top-p=0.95) at epoch=2, step=294...
- Top-p (p=0.95) Sample: Once upon aOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficialOfficial
+[transformer] Generating sample text (top-p=0.95) at epoch=2, step=293...
+ Top-p (p=0.95) Sample: Once upon a a propell ASC was and, the designsvecvec【 brokerageMarcus diversetestedBridge. debacle thoughtful不
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step1000.pt
-[transformer] Epoch 2/30, Step 300/703 (global step: 1003) Partial Avg Loss: 22.1570 lr=6.912611e-05
-[transformer] Epoch 2/30, Step 400/703 (global step: 1103) Partial Avg Loss: 21.6035 lr=7.514801e-05
-[transformer] Epoch 2/30, Step 500/703 (global step: 1203) Partial Avg Loss: 21.1297 lr=8.171200e-05
-[transformer] Epoch 2/30, Step 600/703 (global step: 1303) Partial Avg Loss: 20.6760 lr=8.881010e-05
-[transformer] Epoch 2/30, Step 700/703 (global step: 1403) Partial Avg Loss: 20.2252 lr=9.643366e-05
-[transformer] *** End of Epoch 2 *** Avg Train Loss: 21.8104
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step1000.pt
+[transformer] Epoch 2/30, Step 300/703 (global step: 1003) Partial Avg Loss: 19.6674 lr=6.912611e-05
+[transformer] Epoch 2/30, Step 400/703 (global step: 1103) Partial Avg Loss: 19.5114 lr=7.514801e-05
+[transformer] Epoch 2/30, Step 500/703 (global step: 1203) Partial Avg Loss: 19.4071 lr=8.171200e-05
+[transformer] Epoch 2/30, Step 600/703 (global step: 1303) Partial Avg Loss: 19.1887 lr=8.881010e-05
+[transformer] Epoch 2/30, Step 700/703 (global step: 1403) Partial Avg Loss: 18.9972 lr=9.643366e-05
+[transformer] *** End of Epoch 2 *** Avg Train Loss: 19.5265
 [transformer] Running validation for epoch 2...
-[transformer] *** Epoch 2 Validation Loss ***: 20.0570  Acc: 0.3256
+[transformer] *** Epoch 2 Validation Loss ***: 18.9699  Acc: 0.3144
 --------------------------------------------------
 
-[transformer] Generating sample text (greedy) at epoch=3, step=66...
- Greedy Sample: Once upon a a a a a a little little little little little little little little little little little little little little little
-[transformer] Generating sample text (top-p=0.95) at epoch=3, step=66...
- Top-p (p=0.95) Sample: Once upon a unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered unanswered
+[transformer] Generating sample text (greedy) at epoch=3, step=63...
+ Greedy Sample: Once upon a a a a a a a a a a a a a a a a a a a a a
+[transformer] Generating sample text (top-p=0.95) at epoch=3, step=63...
+ Top-p (p=0.95) Sample: Once upon a Cly Cly Clyannedannedshall parameter purity bo bo bo then clasp covert Techn thoughtful manuscripts a a a
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step1500.pt
-[transformer] Epoch 3/30, Step 100/703 (global step: 1506) Partial Avg Loss: 19.8257 lr=1.048254e-04
-[transformer] Epoch 3/30, Step 200/703 (global step: 1606) Partial Avg Loss: 19.3922 lr=1.134864e-04
-[transformer] Epoch 3/30, Step 300/703 (global step: 1706) Partial Avg Loss: 18.8333 lr=1.226428e-04
-[transformer] Epoch 3/30, Step 400/703 (global step: 1806) Partial Avg Loss: 18.1418 lr=1.322834e-04
-[transformer] Epoch 3/30, Step 500/703 (global step: 1906) Partial Avg Loss: 17.0904 lr=1.423965e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step1500.pt
+[transformer] Epoch 3/30, Step 100/703 (global step: 1506) Partial Avg Loss: 18.7237 lr=1.048254e-04
+[transformer] Epoch 3/30, Step 200/703 (global step: 1606) Partial Avg Loss: 18.4330 lr=1.134864e-04
+[transformer] Epoch 3/30, Step 300/703 (global step: 1706) Partial Avg Loss: 18.1089 lr=1.226428e-04
+[transformer] Epoch 3/30, Step 400/703 (global step: 1806) Partial Avg Loss: 17.5010 lr=1.322834e-04
+[transformer] Epoch 3/30, Step 500/703 (global step: 1906) Partial Avg Loss: 18.1585 lr=1.423965e-04
 
-[transformer] Generating sample text (greedy) at epoch=3, step=560...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She was very very very very and the challenged challenged
-[transformer] Generating sample text (top-p=0.95) at epoch=3, step=560...
- Top-p (p=0.95) Sample: Once upon a time, he named Analog to preferring preferring preferring preferring preferring preferring preferring preferring preferring preferring preferring preferring preferring preferring
+[transformer] Generating sample text (greedy) at epoch=3, step=555...
+ Greedy Sample: Once upon a time, there was a little little named Tim. She was a big,,,,,,
+[transformer] Generating sample text (top-p=0.95) at epoch=3, step=555...
+ Top-p (p=0.95) Sample: Once upon a time, there was a little had had prest mom Lists. Theyjavascript was.rozen antics jack jack
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step2000.pt
-[transformer] Epoch 3/30, Step 600/703 (global step: 2006) Partial Avg Loss: 16.3723 lr=1.529697e-04
-[transformer] Epoch 3/30, Step 700/703 (global step: 2106) Partial Avg Loss: 15.4691 lr=1.639902e-04
-[transformer] *** End of Epoch 3 *** Avg Train Loss: 17.8627
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step2000.pt
+[transformer] Epoch 3/30, Step 600/703 (global step: 2006) Partial Avg Loss: 17.1320 lr=1.529697e-04
+[transformer] Epoch 3/30, Step 700/703 (global step: 2106) Partial Avg Loss: 16.0514 lr=1.639902e-04
+[transformer] *** End of Epoch 3 *** Avg Train Loss: 17.7220
 [transformer] Running validation for epoch 3...
-[transformer] *** Epoch 3 Validation Loss ***: 15.2002  Acc: 0.3731
+[transformer] *** Epoch 3 Validation Loss ***: 15.7943  Acc: 0.3637
 --------------------------------------------------
-[transformer] Epoch 4/30, Step 100/703 (global step: 2209) Partial Avg Loss: 14.6442 lr=1.757948e-04
-[transformer] Epoch 4/30, Step 200/703 (global step: 2309) Partial Avg Loss: 13.9681 lr=1.876814e-04
-[transformer] Epoch 4/30, Step 300/703 (global step: 2409) Partial Avg Loss: 13.1958 lr=1.999730e-04
+[transformer] Epoch 4/30, Step 100/703 (global step: 2209) Partial Avg Loss: 15.4968 lr=1.757948e-04
+[transformer] Epoch 4/30, Step 200/703 (global step: 2309) Partial Avg Loss: 15.0260 lr=1.876814e-04
+[transformer] Epoch 4/30, Step 300/703 (global step: 2409) Partial Avg Loss: 14.3576 lr=1.999730e-04
 
-[transformer] Generating sample text (greedy) at epoch=4, step=332...
- Greedy Sample: Once upon a time, there was a little boy named Timmy. Timmy loved to go to go. Tim
-[transformer] Generating sample text (top-p=0.95) at epoch=4, step=332...
- Top-p (p=0.95) Sample: Once upon a time, there was a newfound newfound.
-ers saw a could could could punishing iPod iPod iPod iPod
+[transformer] Generating sample text (greedy) at epoch=4, step=325...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her mom day, but
+[transformer] Generating sample text (top-p=0.95) at epoch=4, step=325...
+ Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Lily. She went to outdoor banks nobility Tesla Missionents.
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step2500.pt
-[transformer] Epoch 4/30, Step 400/703 (global step: 2509) Partial Avg Loss: 12.6669 lr=2.126545e-04
-[transformer] Epoch 4/30, Step 500/703 (global step: 2609) Partial Avg Loss: 12.0846 lr=2.257106e-04
-[transformer] Epoch 4/30, Step 600/703 (global step: 2709) Partial Avg Loss: 11.6153 lr=2.391253e-04
-[transformer] Epoch 4/30, Step 700/703 (global step: 2809) Partial Avg Loss: 11.2208 lr=2.528823e-04
-[transformer] *** End of Epoch 4 *** Avg Train Loss: 12.7628
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step2500.pt
+[transformer] Epoch 4/30, Step 400/703 (global step: 2509) Partial Avg Loss: 13.2897 lr=2.126545e-04
+[transformer] Epoch 4/30, Step 500/703 (global step: 2609) Partial Avg Loss: 14.3189 lr=2.257106e-04
+[transformer] Epoch 4/30, Step 600/703 (global step: 2709) Partial Avg Loss: 12.8578 lr=2.391253e-04
+[transformer] Epoch 4/30, Step 700/703 (global step: 2809) Partial Avg Loss: 11.4776 lr=2.528823e-04
+[transformer] *** End of Epoch 4 *** Avg Train Loss: 13.8205
 [transformer] Running validation for epoch 4...
-[transformer] *** Epoch 4 Validation Loss ***: 11.0190  Acc: 0.4125
+[transformer] *** Epoch 4 Validation Loss ***: 11.0989  Acc: 0.4091
 --------------------------------------------------
-[transformer] Epoch 5/30, Step 100/703 (global step: 2912) Partial Avg Loss: 10.7635 lr=2.673922e-04
 
-[transformer] Generating sample text (greedy) at epoch=5, step=104...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her mom andateral.
-[transformer] Generating sample text (top-p=0.95) at epoch=5, step=104...
- Top-p (p=0.95) Sample: Once upon a time, there was aclosed was walking ofQaedadepthdepthdepthdepthdepthdepthdepthdepthdepthdepth
+[transformer] Generating sample text (greedy) at epoch=5, step=95...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her mommy was very
+[transformer] Generating sample text (top-p=0.95) at epoch=5, step=95...
+ Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Timmy]-]-]-]-livedlivedlivedlivedlivedlived
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step3000.pt
-[transformer] Epoch 5/30, Step 200/703 (global step: 3012) Partial Avg Loss: 10.3336 lr=2.817920e-04
-[transformer] Epoch 5/30, Step 300/703 (global step: 3112) Partial Avg Loss: 10.0832 lr=2.964822e-04
-[transformer] Epoch 5/30, Step 400/703 (global step: 3212) Partial Avg Loss: 9.7481 lr=3.114447e-04
-[transformer] Epoch 5/30, Step 500/703 (global step: 3312) Partial Avg Loss: 9.4595 lr=3.266614e-04
+[transformer] Epoch 5/30, Step 100/703 (global step: 2912) Partial Avg Loss: 10.8373 lr=2.673922e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step3000.pt
+[transformer] Epoch 5/30, Step 200/703 (global step: 3012) Partial Avg Loss: 10.2126 lr=2.817920e-04
+[transformer] Epoch 5/30, Step 300/703 (global step: 3112) Partial Avg Loss: 9.7719 lr=2.964822e-04
+[transformer] Epoch 5/30, Step 400/703 (global step: 3212) Partial Avg Loss: 10.2232 lr=3.114447e-04
+[transformer] Epoch 5/30, Step 500/703 (global step: 3312) Partial Avg Loss: 9.0720 lr=3.266614e-04
 
-[transformer] Generating sample text (greedy) at epoch=5, step=598...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside andob and the park
-[transformer] Generating sample text (top-p=0.95) at epoch=5, step=598...
- Top-p (p=0.95) Sample: Once upon a time, there was a boy who loved to hired hired hired hired hired hired hired hired hired hired hired
+[transformer] Generating sample text (greedy) at epoch=5, step=587...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys. One day
+[transformer] Generating sample text (top-p=0.95) at epoch=5, step=587...
+ Top-p (p=0.95) Sample: Once upon a time, there was a33. He loved ever]- element each other Pocket again with their Taking
 
-[transformer] Epoch 5/30, Step 600/703 (global step: 3412) Partial Avg Loss: 9.2163 lr=3.421136e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step3500.pt
-[transformer] Epoch 5/30, Step 700/703 (global step: 3512) Partial Avg Loss: 8.8881 lr=3.577827e-04
-[transformer] *** End of Epoch 5 *** Avg Train Loss: 9.7802
+[transformer] Epoch 5/30, Step 600/703 (global step: 3412) Partial Avg Loss: 8.8341 lr=3.421136e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step3500.pt
+[transformer] Epoch 5/30, Step 700/703 (global step: 3512) Partial Avg Loss: 8.5749 lr=3.577827e-04
+[transformer] *** End of Epoch 5 *** Avg Train Loss: 9.6435
 [transformer] Running validation for epoch 5...
-[transformer] *** Epoch 5 Validation Loss ***: 8.7983  Acc: 0.4365
+[transformer] *** Epoch 5 Validation Loss ***: 8.5364  Acc: 0.4288
 --------------------------------------------------
-[transformer] Epoch 6/30, Step 100/703 (global step: 3615) Partial Avg Loss: 8.6563 lr=3.741283e-04
-[transformer] Epoch 6/30, Step 200/703 (global step: 3715) Partial Avg Loss: 8.3901 lr=3.901784e-04
-[transformer] Epoch 6/30, Step 300/703 (global step: 3815) Partial Avg Loss: 8.4349 lr=4.063867e-04
+[transformer] Epoch 6/30, Step 100/703 (global step: 3615) Partial Avg Loss: 8.3233 lr=3.741283e-04
+[transformer] Epoch 6/30, Step 200/703 (global step: 3715) Partial Avg Loss: 8.1212 lr=3.901784e-04
+[transformer] Epoch 6/30, Step 300/703 (global step: 3815) Partial Avg Loss: 8.2561 lr=4.063867e-04
 
-[transformer] Generating sample text (greedy) at epoch=6, step=369...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and have a
-[transformer] Generating sample text (top-p=0.95) at epoch=6, step=369...
- Top-p (p=0.95) Sample: Once upon a time, there was a boy named Tim stuffed. Tim had BigLinksLinksLinksLinksLinksLinksLinks
+[transformer] Generating sample text (greedy) at epoch=6, step=357...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her mom
+[transformer] Generating sample text (top-p=0.95) at epoch=6, step=357...
+ Top-p (p=0.95) Sample: Once upon a time, there was a little girl who loved to help. She was neither. One day, she
 
-[transformer] Epoch 6/30, Step 400/703 (global step: 3915) Partial Avg Loss: 8.0533 lr=4.227335e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step4000.pt
-[transformer] Epoch 6/30, Step 500/703 (global step: 4015) Partial Avg Loss: 7.7967 lr=4.391988e-04
-[transformer] Epoch 6/30, Step 600/703 (global step: 4115) Partial Avg Loss: 7.6605 lr=4.557626e-04
-[transformer] Epoch 6/30, Step 700/703 (global step: 4215) Partial Avg Loss: 7.3959 lr=4.724046e-04
-[transformer] *** End of Epoch 6 *** Avg Train Loss: 8.0527
+[transformer] Epoch 6/30, Step 400/703 (global step: 3915) Partial Avg Loss: 7.7490 lr=4.227335e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step4000.pt
+[transformer] Epoch 6/30, Step 500/703 (global step: 4015) Partial Avg Loss: 7.6210 lr=4.391988e-04
+[transformer] Epoch 6/30, Step 600/703 (global step: 4115) Partial Avg Loss: 8.8609 lr=4.557626e-04
+[transformer] Epoch 6/30, Step 700/703 (global step: 4215) Partial Avg Loss: 7.5112 lr=4.724046e-04
+[transformer] *** End of Epoch 6 *** Avg Train Loss: 8.0592
 [transformer] Running validation for epoch 6...
-[transformer] *** Epoch 6 Validation Loss ***: 7.2900  Acc: 0.4569
+[transformer] *** Epoch 6 Validation Loss ***: 7.2144  Acc: 0.4462
 --------------------------------------------------
-[transformer] Epoch 7/30, Step 100/703 (global step: 4318) Partial Avg Loss: 7.2554 lr=4.896064e-04
+[transformer] Epoch 7/30, Step 100/703 (global step: 4318) Partial Avg Loss: 7.1075 lr=4.896064e-04
 
-[transformer] Generating sample text (greedy) at epoch=7, step=140...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One
-[transformer] Generating sample text (top-p=0.95) at epoch=7, step=140...
- Top-p (p=0.95) Sample: Once upon a time, there was a abusive 640 640 640 640 640 640 640 640 640 640 640 640 640 640
+[transformer] Generating sample text (greedy) at epoch=7, step=126...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside and her mommy.
+[transformer] Generating sample text (top-p=0.95) at epoch=7, step=126...
+ Top-p (p=0.95) Sample: Once upon a time, there was a little rabbit named Max. She loved to help the bureau with his dad.
 
-[transformer] Epoch 7/30, Step 200/703 (global step: 4418) Partial Avg Loss: 7.1404 lr=5.063449e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step4500.pt
-[transformer] Epoch 7/30, Step 300/703 (global step: 4518) Partial Avg Loss: 6.9469 lr=5.231000e-04
-[transformer] Epoch 7/30, Step 400/703 (global step: 4618) Partial Avg Loss: 6.7722 lr=5.398514e-04
-[transformer] Epoch 7/30, Step 500/703 (global step: 4718) Partial Avg Loss: 6.6353 lr=5.565786e-04
-[transformer] Epoch 7/30, Step 600/703 (global step: 4818) Partial Avg Loss: 6.4865 lr=5.732612e-04
+[transformer] Epoch 7/30, Step 200/703 (global step: 4418) Partial Avg Loss: 6.9134 lr=5.063449e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step4500.pt
+[transformer] Epoch 7/30, Step 300/703 (global step: 4518) Partial Avg Loss: 6.7485 lr=5.231000e-04
+[transformer] Epoch 7/30, Step 400/703 (global step: 4618) Partial Avg Loss: 6.6762 lr=5.398514e-04
+[transformer] Epoch 7/30, Step 500/703 (global step: 4718) Partial Avg Loss: 6.5376 lr=5.565786e-04
+[transformer] Epoch 7/30, Step 600/703 (global step: 4818) Partial Avg Loss: 6.4131 lr=5.732612e-04
 
-[transformer] Generating sample text (greedy) at epoch=7, step=634...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and play with
-[transformer] Generating sample text (top-p=0.95) at epoch=7, step=634...
- Top-p (p=0.95) Sample: Once upon a time, there was a Ranger Ranger share their home.amus was so he would knit from battle battle
+[transformer] Generating sample text (greedy) at epoch=7, step=618...
+ Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys. One day
+[transformer] Generating sample text (top-p=0.95) at epoch=7, step=618...
+ Top-p (p=0.95) Sample: Once upon a time, there was a girl named Sarah, Jack. She was a up,ogenesis with her stable
 
-[transformer] Epoch 7/30, Step 700/703 (global step: 4918) Partial Avg Loss: 6.6147 lr=5.898789e-04
-[transformer] *** End of Epoch 7 *** Avg Train Loss: 6.8400
+[transformer] Epoch 7/30, Step 700/703 (global step: 4918) Partial Avg Loss: 6.8818 lr=5.898789e-04
+[transformer] *** End of Epoch 7 *** Avg Train Loss: 6.8826
 [transformer] Running validation for epoch 7...
-[transformer] *** Epoch 7 Validation Loss ***: 7.4688  Acc: 0.4133
+[transformer] *** Epoch 7 Validation Loss ***: 30.8070  Acc: 0.2432
 --------------------------------------------------
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step5000.pt
-[transformer] Epoch 8/30, Step 100/703 (global step: 5021) Partial Avg Loss: 6.3436 lr=6.069059e-04
-[transformer] Epoch 8/30, Step 200/703 (global step: 5121) Partial Avg Loss: 5.9712 lr=6.233297e-04
-[transformer] Epoch 8/30, Step 300/703 (global step: 5221) Partial Avg Loss: 5.8714 lr=6.396276e-04
-[transformer] Epoch 8/30, Step 400/703 (global step: 5321) Partial Avg Loss: 5.7691 lr=6.557797e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step5000.pt
+[transformer] Epoch 8/30, Step 100/703 (global step: 5021) Partial Avg Loss: 22.6608 lr=6.069059e-04
+[transformer] Epoch 8/30, Step 200/703 (global step: 5121) Partial Avg Loss: 10.7094 lr=6.233297e-04
+[transformer] Epoch 8/30, Step 300/703 (global step: 5221) Partial Avg Loss: 9.1845 lr=6.396276e-04
 
-[transformer] Generating sample text (greedy) at epoch=8, step=406...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and just just
-[transformer] Generating sample text (top-p=0.95) at epoch=8, step=406...
- Top-p (p=0.95) Sample: Once upon a time there was a 126 126 126 126. Everyone was secret secret that backward reason together. They played
+[transformer] Generating sample text (greedy) at epoch=8, step=388...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=8, step=388...
+ Top-p (p=0.95) Sample: Once upon a the so more. jar was cit! that! Wow happy a hardIt,2012! reorgan the
 
-[transformer] Epoch 8/30, Step 500/703 (global step: 5421) Partial Avg Loss: 5.6788 lr=6.717663e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step5500.pt
-[transformer] Epoch 8/30, Step 600/703 (global step: 5521) Partial Avg Loss: 5.5329 lr=6.875679e-04
-[transformer] Epoch 8/30, Step 700/703 (global step: 5621) Partial Avg Loss: 5.4341 lr=7.031654e-04
-[transformer] *** End of Epoch 8 *** Avg Train Loss: 5.7978
+[transformer] Epoch 8/30, Step 400/703 (global step: 5321) Partial Avg Loss: 8.2729 lr=6.557797e-04
+[transformer] Epoch 8/30, Step 500/703 (global step: 5421) Partial Avg Loss: 8.0254 lr=6.717663e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step5500.pt
+[transformer] Epoch 8/30, Step 600/703 (global step: 5521) Partial Avg Loss: 7.6913 lr=6.875679e-04
+[transformer] Epoch 8/30, Step 700/703 (global step: 5621) Partial Avg Loss: 7.5240 lr=7.031654e-04
+[transformer] *** End of Epoch 8 *** Avg Train Loss: 10.5675
 [transformer] Running validation for epoch 8...
-[transformer] *** Epoch 8 Validation Loss ***: 5.3592  Acc: 0.4861
+[transformer] *** Epoch 8 Validation Loss ***: 7.4331  Acc: 0.2435
 --------------------------------------------------
-[transformer] Epoch 9/30, Step 100/703 (global step: 5724) Partial Avg Loss: 5.3376 lr=7.189973e-04
+[transformer] Epoch 9/30, Step 100/703 (global step: 5724) Partial Avg Loss: 7.3485 lr=7.189973e-04
 
-[transformer] Generating sample text (greedy) at epoch=9, step=179...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One
-[transformer] Generating sample text (top-p=0.95) at epoch=9, step=179...
- Top-p (p=0.95) Sample: Once upon a time there was a big trip. It wasler. Agu that drinking drinking every day. Then one
+[transformer] Generating sample text (greedy) at epoch=9, step=159...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=9, step=159...
+ Top-p (p=0.95) Sample: Once upon a! a! sunshine a with It cried and.! They.! the! valid that! too
 
-[transformer] Epoch 9/30, Step 200/703 (global step: 5824) Partial Avg Loss: 5.1564 lr=7.341220e-04
-[transformer] Epoch 9/30, Step 300/703 (global step: 5924) Partial Avg Loss: 5.0485 lr=7.489859e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step6000.pt
-[transformer] Epoch 9/30, Step 400/703 (global step: 6024) Partial Avg Loss: 5.0716 lr=7.635707e-04
-[transformer] Epoch 9/30, Step 500/703 (global step: 6124) Partial Avg Loss: 5.0638 lr=7.778587e-04
-[transformer] Epoch 9/30, Step 600/703 (global step: 6224) Partial Avg Loss: 4.7397 lr=7.918324e-04
+[transformer] Epoch 9/30, Step 200/703 (global step: 5824) Partial Avg Loss: 7.2433 lr=7.341220e-04
+[transformer] Epoch 9/30, Step 300/703 (global step: 5924) Partial Avg Loss: 7.1700 lr=7.489859e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step6000.pt
+[transformer] Epoch 9/30, Step 400/703 (global step: 6024) Partial Avg Loss: 7.1828 lr=7.635707e-04
+[transformer] Epoch 9/30, Step 500/703 (global step: 6124) Partial Avg Loss: 7.0957 lr=7.778587e-04
+[transformer] Epoch 9/30, Step 600/703 (global step: 6224) Partial Avg Loss: 7.0317 lr=7.918324e-04
 
-[transformer] Generating sample text (greedy) at epoch=9, step=673...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and draw and
-[transformer] Generating sample text (top-p=0.95) at epoch=9, step=673...
- Top-p (p=0.95) Sample: Once upon a time, there was a small girl who was very sock. It was very plants and she knew she
+[transformer] Generating sample text (greedy) at epoch=9, step=652...
+ Greedy Sample: Once upon a....................
+[transformer] Generating sample text (top-p=0.95) at epoch=9, step=652...
+ Top-p (p=0.95) Sample: Once upon a in what'skeeper to' happy cartoon best it hopped again saw One is new replied soon visit else
 
-[transformer] Epoch 9/30, Step 700/703 (global step: 6324) Partial Avg Loss: 4.6602 lr=8.054749e-04
-[transformer] *** End of Epoch 9 *** Avg Train Loss: 5.0094
+[transformer] Epoch 9/30, Step 700/703 (global step: 6324) Partial Avg Loss: 7.0007 lr=8.054749e-04
+[transformer] *** End of Epoch 9 *** Avg Train Loss: 7.1527
 [transformer] Running validation for epoch 9...
-[transformer] *** Epoch 9 Validation Loss ***: 4.6626  Acc: 0.5025
+[transformer] *** Epoch 9 Validation Loss ***: 6.9498  Acc: 0.2434
 --------------------------------------------------
-[transformer] Epoch 10/30, Step 100/703 (global step: 6427) Partial Avg Loss: 4.5446 lr=8.191628e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step6500.pt
-[transformer] Epoch 10/30, Step 200/703 (global step: 6527) Partial Avg Loss: 4.5091 lr=8.320821e-04
-[transformer] Epoch 10/30, Step 300/703 (global step: 6627) Partial Avg Loss: 4.3854 lr=8.446212e-04
-[transformer] Epoch 10/30, Step 400/703 (global step: 6727) Partial Avg Loss: 4.3355 lr=8.567646e-04
+[transformer] Epoch 10/30, Step 100/703 (global step: 6427) Partial Avg Loss: 6.9057 lr=8.191628e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step6500.pt
+[transformer] Epoch 10/30, Step 200/703 (global step: 6527) Partial Avg Loss: 6.8834 lr=8.320821e-04
+[transformer] Epoch 10/30, Step 300/703 (global step: 6627) Partial Avg Loss: 6.7380 lr=8.446212e-04
+[transformer] Epoch 10/30, Step 400/703 (global step: 6727) Partial Avg Loss: 6.7873 lr=8.567646e-04
 
-[transformer] Generating sample text (greedy) at epoch=10, step=445...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her friends
-[transformer] Generating sample text (top-p=0.95) at epoch=10, step=445...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play outside andShort. One day
+[transformer] Generating sample text (greedy) at epoch=10, step=423...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=10, step=423...
+ Top-p (p=0.95) Sample: Once upon a so! cl playing heard and very, world! one! He! decided came you, a see
 
-[transformer] Epoch 10/30, Step 500/703 (global step: 6827) Partial Avg Loss: 4.2583 lr=8.684977e-04
-[transformer] Epoch 10/30, Step 600/703 (global step: 6927) Partial Avg Loss: 4.1670 lr=8.798061e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step7000.pt
-[transformer] Epoch 10/30, Step 700/703 (global step: 7027) Partial Avg Loss: 4.1181 lr=8.906760e-04
-[transformer] *** End of Epoch 10 *** Avg Train Loss: 4.3295
+[transformer] Epoch 10/30, Step 500/703 (global step: 6827) Partial Avg Loss: 6.6870 lr=8.684977e-04
+[transformer] Epoch 10/30, Step 600/703 (global step: 6927) Partial Avg Loss: 6.6618 lr=8.798061e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step7000.pt
+[transformer] Epoch 10/30, Step 700/703 (global step: 7027) Partial Avg Loss: 6.6117 lr=8.906760e-04
+[transformer] *** End of Epoch 10 *** Avg Train Loss: 6.7529
 [transformer] Running validation for epoch 10...
-[transformer] *** Epoch 10 Validation Loss ***: 4.1543  Acc: 0.5173
+[transformer] *** Epoch 10 Validation Loss ***: 6.7599  Acc: 0.2431
 --------------------------------------------------
-[transformer] Epoch 11/30, Step 100/703 (global step: 7130) Partial Avg Loss: 4.0750 lr=9.013996e-04
-[transformer] Epoch 11/30, Step 200/703 (global step: 7230) Partial Avg Loss: 4.0895 lr=9.113393e-04
+[transformer] Epoch 11/30, Step 100/703 (global step: 7130) Partial Avg Loss: 6.5529 lr=9.013996e-04
 
-[transformer] Generating sample text (greedy) at epoch=11, step=218...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park with her
-[transformer] Generating sample text (top-p=0.95) at epoch=11, step=218...
- Top-p (p=0.95) Sample: Once upon a time, there was a girl named Lucy. She liked to everyone to show her and fight things at
+[transformer] Generating sample text (greedy) at epoch=11, step=193...
+ Greedy Sample: Once upon a....................
+[transformer] Generating sample text (top-p=0.95) at epoch=11, step=193...
+ Top-p (p=0.95) Sample: Once upon a not That to take some and to garden red in. old1 share time she went away further She
 
-[transformer] Epoch 11/30, Step 300/703 (global step: 7330) Partial Avg Loss: 3.9257 lr=9.208021e-04
-[transformer] Epoch 11/30, Step 400/703 (global step: 7430) Partial Avg Loss: 3.8634 lr=9.297764e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step7500.pt
-[transformer] Epoch 11/30, Step 500/703 (global step: 7530) Partial Avg Loss: 3.9905 lr=9.382514e-04
-[transformer] Epoch 11/30, Step 600/703 (global step: 7630) Partial Avg Loss: 3.7634 lr=9.462167e-04
-[transformer] Epoch 11/30, Step 700/703 (global step: 7730) Partial Avg Loss: 3.7019 lr=9.536627e-04
-[transformer] *** End of Epoch 11 *** Avg Train Loss: 3.9154
+[transformer] Epoch 11/30, Step 200/703 (global step: 7230) Partial Avg Loss: 6.6407 lr=9.113393e-04
+[transformer] Epoch 11/30, Step 300/703 (global step: 7330) Partial Avg Loss: 6.6590 lr=9.208021e-04
+[transformer] Epoch 11/30, Step 400/703 (global step: 7430) Partial Avg Loss: 6.4890 lr=9.297764e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step7500.pt
+[transformer] Epoch 11/30, Step 500/703 (global step: 7530) Partial Avg Loss: 6.4558 lr=9.382514e-04
+[transformer] Epoch 11/30, Step 600/703 (global step: 7630) Partial Avg Loss: 6.4173 lr=9.462167e-04
+
+[transformer] Generating sample text (greedy) at epoch=11, step=685...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=11, step=685...
+ Top-p (p=0.95) Sample: Once upon a
+ wind her!! again!!! something colorful,javascript
+, the Jane she! show
+
+[transformer] Epoch 11/30, Step 700/703 (global step: 7730) Partial Avg Loss: 6.4713 lr=9.536627e-04
+[transformer] *** End of Epoch 11 *** Avg Train Loss: 6.5254
 [transformer] Running validation for epoch 11...
-[transformer] *** Epoch 11 Validation Loss ***: 3.7619  Acc: 0.5311
+[transformer] *** Epoch 11 Validation Loss ***: 6.3928  Acc: 0.2448
 --------------------------------------------------
+[transformer] Epoch 12/30, Step 100/703 (global step: 7833) Partial Avg Loss: 6.4106 lr=9.607794e-04
+[transformer] Epoch 12/30, Step 200/703 (global step: 7933) Partial Avg Loss: 6.4188 lr=9.671437e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step8000.pt
+[transformer] Epoch 12/30, Step 300/703 (global step: 8033) Partial Avg Loss: 6.3905 lr=9.729631e-04
+[transformer] Epoch 12/30, Step 400/703 (global step: 8133) Partial Avg Loss: 6.3308 lr=9.782305e-04
 
-[transformer] Generating sample text (greedy) at epoch=12, step=1...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the garden. One
-[transformer] Generating sample text (top-p=0.95) at epoch=12, step=1...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and eat new
+[transformer] Generating sample text (greedy) at epoch=12, step=455...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=12, step=455...
+ Top-p (p=0.95) Sample: Once upon a!! !!! he!! She!!!!!t!!! and
 
-[transformer] Epoch 12/30, Step 100/703 (global step: 7833) Partial Avg Loss: 3.6456 lr=9.607794e-04
-[transformer] Epoch 12/30, Step 200/703 (global step: 7933) Partial Avg Loss: 3.5793 lr=9.671437e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step8000.pt
-[transformer] Epoch 12/30, Step 300/703 (global step: 8033) Partial Avg Loss: 3.5970 lr=9.729631e-04
-[transformer] Epoch 12/30, Step 400/703 (global step: 8133) Partial Avg Loss: 3.5433 lr=9.782305e-04
-
-[transformer] Generating sample text (greedy) at epoch=12, step=495...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her toys
-[transformer] Generating sample text (top-p=0.95) at epoch=12, step=495...
- Top-p (p=0.95) Sample: Once upon a time, there was a brave legislators legislators legislators legislators. The earthquake was very help and always wanted to
-
-[transformer] Epoch 12/30, Step 500/703 (global step: 8233) Partial Avg Loss: 3.4813 lr=9.829396e-04
-[transformer] Epoch 12/30, Step 600/703 (global step: 8333) Partial Avg Loss: 3.4736 lr=9.870844e-04
-[transformer] Epoch 12/30, Step 700/703 (global step: 8433) Partial Avg Loss: 3.4574 lr=9.906601e-04
-[transformer] *** End of Epoch 12 *** Avg Train Loss: 3.5393
+[transformer] Epoch 12/30, Step 500/703 (global step: 8233) Partial Avg Loss: 6.3727 lr=9.829396e-04
+[transformer] Epoch 12/30, Step 600/703 (global step: 8333) Partial Avg Loss: 6.3333 lr=9.870844e-04
+[transformer] Epoch 12/30, Step 700/703 (global step: 8433) Partial Avg Loss: 6.2906 lr=9.906601e-04
+[transformer] *** End of Epoch 12 *** Avg Train Loss: 6.3647
 [transformer] Running validation for epoch 12...
-[transformer] *** Epoch 12 Validation Loss ***: 3.5178  Acc: 0.5411
+[transformer] *** Epoch 12 Validation Loss ***: 6.5763  Acc: 0.2396
 --------------------------------------------------
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step8500.pt
-[transformer] Epoch 13/30, Step 100/703 (global step: 8536) Partial Avg Loss: 3.4277 lr=9.937434e-04
-[transformer] Epoch 13/30, Step 200/703 (global step: 8636) Partial Avg Loss: 3.4027 lr=9.961509e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step8500.pt
+[transformer] Epoch 13/30, Step 100/703 (global step: 8536) Partial Avg Loss: 6.3079 lr=9.937434e-04
+[transformer] Epoch 13/30, Step 200/703 (global step: 8636) Partial Avg Loss: 6.2626 lr=9.961509e-04
 
-[transformer] Generating sample text (greedy) at epoch=13, step=267...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the garden. One
-[transformer] Generating sample text (top-p=0.95) at epoch=13, step=267...
- Top-p (p=0.95) Sample: Once upon a time, there was a kind bags. His friend was in pulled baseball and always pulled the bakery.
+[transformer] Generating sample text (greedy) at epoch=13, step=225...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=13, step=225...
+ Top-p (p=0.95) Sample: Once upon a She! the!! his the T saw her find mom
+ was find see around She! The
 
-[transformer] Epoch 13/30, Step 300/703 (global step: 8736) Partial Avg Loss: 3.3138 lr=9.979782e-04
-[transformer] Epoch 13/30, Step 400/703 (global step: 8836) Partial Avg Loss: 3.3102 lr=9.992231e-04
-[transformer] Epoch 13/30, Step 500/703 (global step: 8936) Partial Avg Loss: 3.3183 lr=9.998839e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step9000.pt
-[transformer] Epoch 13/30, Step 600/703 (global step: 9036) Partial Avg Loss: 3.2816 lr=9.999923e-04
-[transformer] Epoch 13/30, Step 700/703 (global step: 9136) Partial Avg Loss: 3.2559 lr=9.998950e-04
-[transformer] *** End of Epoch 13 *** Avg Train Loss: 3.3300
+[transformer] Epoch 13/30, Step 300/703 (global step: 8736) Partial Avg Loss: 6.2462 lr=9.979782e-04
+[transformer] Epoch 13/30, Step 400/703 (global step: 8836) Partial Avg Loss: 6.2331 lr=9.992231e-04
+[transformer] Epoch 13/30, Step 500/703 (global step: 8936) Partial Avg Loss: 6.2286 lr=9.998839e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step9000.pt
+[transformer] Epoch 13/30, Step 600/703 (global step: 9036) Partial Avg Loss: 6.2565 lr=9.999923e-04
+[transformer] Epoch 13/30, Step 700/703 (global step: 9136) Partial Avg Loss: 6.1824 lr=9.998950e-04
+[transformer] *** End of Epoch 13 *** Avg Train Loss: 6.2450
 [transformer] Running validation for epoch 13...
-[transformer] *** Epoch 13 Validation Loss ***: 3.3178  Acc: 0.5519
+[transformer] *** Epoch 13 Validation Loss ***: 6.1737  Acc: 0.2412
 --------------------------------------------------
 
-[transformer] Generating sample text (greedy) at epoch=14, step=39...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her favorite
-[transformer] Generating sample text (top-p=0.95) at epoch=14, step=39...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl called figure with her mommy. " trapped on, colorful colorful
+[transformer] Generating sample text (greedy) at epoch=14, step=1...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=14, step=1...
+ Top-p (p=0.95) Sample: Once upon a and there! find
+! many!! mom and.
+!!! new! in.
 
-[transformer] Epoch 14/30, Step 100/703 (global step: 9239) Partial Avg Loss: 3.2228 lr=9.996778e-04
-[transformer] Epoch 14/30, Step 200/703 (global step: 9339) Partial Avg Loss: 3.1777 lr=9.993534e-04
-[transformer] Epoch 14/30, Step 300/703 (global step: 9439) Partial Avg Loss: 3.1639 lr=9.989172e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step9500.pt
-[transformer] Epoch 14/30, Step 400/703 (global step: 9539) Partial Avg Loss: 3.1393 lr=9.983694e-04
-[transformer] Epoch 14/30, Step 500/703 (global step: 9639) Partial Avg Loss: 3.1416 lr=9.977100e-04
+[transformer] Epoch 14/30, Step 100/703 (global step: 9239) Partial Avg Loss: 6.2148 lr=9.996778e-04
+[transformer] Epoch 14/30, Step 200/703 (global step: 9339) Partial Avg Loss: 6.1735 lr=9.993534e-04
+[transformer] Epoch 14/30, Step 300/703 (global step: 9439) Partial Avg Loss: 6.1361 lr=9.989172e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step9500.pt
+[transformer] Epoch 14/30, Step 400/703 (global step: 9539) Partial Avg Loss: 6.1174 lr=9.983694e-04
 
-[transformer] Generating sample text (greedy) at epoch=14, step=533...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=14, step=533...
- Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Islam his mommy and daddy. They had a new Bild
+[transformer] Generating sample text (greedy) at epoch=14, step=493...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=14, step=493...
+ Top-p (p=0.95) Sample: Once upon a did hurried and on he!! not hungry she!
+ restaurant shook,!! they and
 
-[transformer] Epoch 14/30, Step 600/703 (global step: 9739) Partial Avg Loss: 3.0991 lr=9.969393e-04
-[transformer] Epoch 14/30, Step 700/703 (global step: 9839) Partial Avg Loss: 3.0847 lr=9.960574e-04
-[transformer] *** End of Epoch 14 *** Avg Train Loss: 3.1464
+
+[transformer] Epoch 14/30, Step 500/703 (global step: 9639) Partial Avg Loss: 6.1026 lr=9.977100e-04
+[transformer] Epoch 14/30, Step 600/703 (global step: 9739) Partial Avg Loss: 6.1939 lr=9.969393e-04
+[transformer] Epoch 14/30, Step 700/703 (global step: 9839) Partial Avg Loss: 6.1513 lr=9.960574e-04
+[transformer] *** End of Epoch 14 *** Avg Train Loss: 6.1552
 [transformer] Running validation for epoch 14...
-[transformer] *** Epoch 14 Validation Loss ***: 3.2132  Acc: 0.5565
+[transformer] *** Epoch 14 Validation Loss ***: 6.1119  Acc: 0.2436
 --------------------------------------------------
-[transformer] Epoch 15/30, Step 100/703 (global step: 9942) Partial Avg Loss: 3.0740 lr=9.950329e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step10000.pt
-[transformer] Epoch 15/30, Step 200/703 (global step: 10042) Partial Avg Loss: 3.0418 lr=9.939258e-04
-[transformer] Epoch 15/30, Step 300/703 (global step: 10142) Partial Avg Loss: 3.0199 lr=9.927082e-04
+[transformer] Epoch 15/30, Step 100/703 (global step: 9942) Partial Avg Loss: 6.1432 lr=9.950329e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step10000.pt
+[transformer] Epoch 15/30, Step 200/703 (global step: 10042) Partial Avg Loss: 6.0919 lr=9.939258e-04
 
-[transformer] Generating sample text (greedy) at epoch=15, step=305...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One
-[transformer] Generating sample text (top-p=0.95) at epoch=15, step=305...
- Top-p (p=0.95) Sample: Once upon a time, there was a screen. It was an important wanted to find a Pink with a disappointed pillow
+[transformer] Generating sample text (greedy) at epoch=15, step=263...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=15, step=263...
+ Top-p (p=0.95) Sample: Once upon a!!!! It! time He gone loved car very never filled boy
+ much a!!
 
-[transformer] Epoch 15/30, Step 400/703 (global step: 10242) Partial Avg Loss: 3.0184 lr=9.913803e-04
-[transformer] Epoch 15/30, Step 500/703 (global step: 10342) Partial Avg Loss: 2.9940 lr=9.899425e-04
-[transformer] Epoch 15/30, Step 600/703 (global step: 10442) Partial Avg Loss: 2.9902 lr=9.883950e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step10500.pt
-[transformer] Epoch 15/30, Step 700/703 (global step: 10542) Partial Avg Loss: 2.9550 lr=9.867382e-04
-[transformer] *** End of Epoch 15 *** Avg Train Loss: 3.0128
+[transformer] Epoch 15/30, Step 300/703 (global step: 10142) Partial Avg Loss: 6.0804 lr=9.927082e-04
+[transformer] Epoch 15/30, Step 400/703 (global step: 10242) Partial Avg Loss: 6.0652 lr=9.913803e-04
+[transformer] Epoch 15/30, Step 500/703 (global step: 10342) Partial Avg Loss: 6.0979 lr=9.899425e-04
+[transformer] Epoch 15/30, Step 600/703 (global step: 10442) Partial Avg Loss: 6.0941 lr=9.883950e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step10500.pt
+[transformer] Epoch 15/30, Step 700/703 (global step: 10542) Partial Avg Loss: 6.0765 lr=9.867382e-04
+[transformer] *** End of Epoch 15 *** Avg Train Loss: 6.0927
 [transformer] Running validation for epoch 15...
-[transformer] *** Epoch 15 Validation Loss ***: 3.1072  Acc: 0.5617
+[transformer] *** Epoch 15 Validation Loss ***: 6.1234  Acc: 0.2434
 --------------------------------------------------
 
-[transformer] Generating sample text (greedy) at epoch=16, step=77...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=16, step=77...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved going to do and pigeon. She had
+[transformer] Generating sample text (greedy) at epoch=16, step=33...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=16, step=33...
+ Top-p (p=0.95) Sample: Once upon a and! He and has moms and go!! to to mom! three full! model him might
 
-[transformer] Epoch 16/30, Step 100/703 (global step: 10645) Partial Avg Loss: 2.9374 lr=9.849178e-04
-[transformer] Epoch 16/30, Step 200/703 (global step: 10745) Partial Avg Loss: 2.9359 lr=9.830403e-04
-[transformer] Epoch 16/30, Step 300/703 (global step: 10845) Partial Avg Loss: 2.9259 lr=9.810547e-04
-[transformer] Epoch 16/30, Step 400/703 (global step: 10945) Partial Avg Loss: 2.9010 lr=9.789615e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step11000.pt
-[transformer] Epoch 16/30, Step 500/703 (global step: 11045) Partial Avg Loss: 2.8834 lr=9.767610e-04
+[transformer] Epoch 16/30, Step 100/703 (global step: 10645) Partial Avg Loss: 6.0668 lr=9.849178e-04
+[transformer] Epoch 16/30, Step 200/703 (global step: 10745) Partial Avg Loss: 6.0987 lr=9.830403e-04
+[transformer] Epoch 16/30, Step 300/703 (global step: 10845) Partial Avg Loss: 6.0411 lr=9.810547e-04
+[transformer] Epoch 16/30, Step 400/703 (global step: 10945) Partial Avg Loss: 6.1114 lr=9.789615e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step11000.pt
+[transformer] Epoch 16/30, Step 500/703 (global step: 11045) Partial Avg Loss: 6.0819 lr=9.767610e-04
 
-[transformer] Generating sample text (greedy) at epoch=16, step=571...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=16, step=571...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to 698 698. She loved to play
+[transformer] Generating sample text (greedy) at epoch=16, step=525...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=16, step=525...
+ Top-p (p=0.95) Sample: Once upon a!! adjusts was face had "! had to aisman more� a for a to outside crying
 
-[transformer] Epoch 16/30, Step 600/703 (global step: 11145) Partial Avg Loss: 2.8751 lr=9.744538e-04
-[transformer] Epoch 16/30, Step 700/703 (global step: 11245) Partial Avg Loss: 2.8541 lr=9.720405e-04
-[transformer] *** End of Epoch 16 *** Avg Train Loss: 2.9023
+[transformer] Epoch 16/30, Step 600/703 (global step: 11145) Partial Avg Loss: 6.0619 lr=9.744538e-04
+[transformer] Epoch 16/30, Step 700/703 (global step: 11245) Partial Avg Loss: 6.0855 lr=9.720405e-04
+[transformer] *** End of Epoch 16 *** Avg Train Loss: 6.0778
 [transformer] Running validation for epoch 16...
-[transformer] *** Epoch 16 Validation Loss ***: 3.0338  Acc: 0.5670
+[transformer] *** Epoch 16 Validation Loss ***: 6.0558  Acc: 0.2449
 --------------------------------------------------
-[transformer] Epoch 17/30, Step 100/703 (global step: 11348) Partial Avg Loss: 2.8418 lr=9.694443e-04
-[transformer] Epoch 17/30, Step 200/703 (global step: 11448) Partial Avg Loss: 2.8276 lr=9.668171e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step11500.pt
-[transformer] Epoch 17/30, Step 300/703 (global step: 11548) Partial Avg Loss: 2.8096 lr=9.640855e-04
+[transformer] Epoch 17/30, Step 100/703 (global step: 11348) Partial Avg Loss: 6.0798 lr=9.694443e-04
+[transformer] Epoch 17/30, Step 200/703 (global step: 11448) Partial Avg Loss: 6.0352 lr=9.668171e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step11500.pt
 
-[transformer] Generating sample text (greedy) at epoch=17, step=343...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=17, step=343...
- Top-p (p=0.95) Sample: Once upon a time, there was a beck who lived in the woods. He had a big, looking for his
+[transformer] Generating sample text (greedy) at epoch=17, step=295...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=17, step=295...
+ Top-p (p=0.95) Sample: Once upon a, a! course. she!! box sad on run scared. and
+! seeds It!
 
-[transformer] Epoch 17/30, Step 400/703 (global step: 11648) Partial Avg Loss: 2.7997 lr=9.612500e-04
-[transformer] Epoch 17/30, Step 500/703 (global step: 11748) Partial Avg Loss: 2.7862 lr=9.583112e-04
-[transformer] Epoch 17/30, Step 600/703 (global step: 11848) Partial Avg Loss: 2.7985 lr=9.552699e-04
-[transformer] Epoch 17/30, Step 700/703 (global step: 11948) Partial Avg Loss: 2.7507 lr=9.521267e-04
-[transformer] *** End of Epoch 17 *** Avg Train Loss: 2.8020
+[transformer] Epoch 17/30, Step 300/703 (global step: 11548) Partial Avg Loss: 6.0407 lr=9.640855e-04
+[transformer] Epoch 17/30, Step 400/703 (global step: 11648) Partial Avg Loss: 6.0371 lr=9.612500e-04
+[transformer] Epoch 17/30, Step 500/703 (global step: 11748) Partial Avg Loss: 6.0350 lr=9.583112e-04
+[transformer] Epoch 17/30, Step 600/703 (global step: 11848) Partial Avg Loss: 6.0465 lr=9.552699e-04
+[transformer] Epoch 17/30, Step 700/703 (global step: 11948) Partial Avg Loss: 6.0326 lr=9.521267e-04
+[transformer] *** End of Epoch 17 *** Avg Train Loss: 6.0442
 [transformer] Running validation for epoch 17...
-[transformer] *** Epoch 17 Validation Loss ***: 2.9419  Acc: 0.5722
+[transformer] *** Epoch 17 Validation Loss ***: 6.0115  Acc: 0.2467
 --------------------------------------------------
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step12000.pt
-[transformer] Epoch 18/30, Step 100/703 (global step: 12051) Partial Avg Loss: 2.7581 lr=9.487834e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step12000.pt
 
-[transformer] Generating sample text (greedy) at epoch=18, step=115...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=18, step=115...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
+[transformer] Generating sample text (greedy) at epoch=18, step=65...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=18, step=65...
+ Top-p (p=0.95) Sample: Once upon a! went! was hand!!.! to upon. see time the!! a!!
 
-[transformer] Epoch 18/30, Step 200/703 (global step: 12151) Partial Avg Loss: 2.7287 lr=9.454355e-04
-[transformer] Epoch 18/30, Step 300/703 (global step: 12251) Partial Avg Loss: 2.7466 lr=9.419880e-04
-[transformer] Epoch 18/30, Step 400/703 (global step: 12351) Partial Avg Loss: 2.7224 lr=9.384416e-04
-[transformer] Epoch 18/30, Step 500/703 (global step: 12451) Partial Avg Loss: 2.7176 lr=9.347970e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step12500.pt
-[transformer] Epoch 18/30, Step 600/703 (global step: 12551) Partial Avg Loss: 2.6840 lr=9.310551e-04
+[transformer] Epoch 18/30, Step 100/703 (global step: 12051) Partial Avg Loss: 6.0311 lr=9.487834e-04
+[transformer] Epoch 18/30, Step 200/703 (global step: 12151) Partial Avg Loss: 6.0295 lr=9.454355e-04
+[transformer] Epoch 18/30, Step 300/703 (global step: 12251) Partial Avg Loss: 6.0324 lr=9.419880e-04
+[transformer] Epoch 18/30, Step 400/703 (global step: 12351) Partial Avg Loss: 6.0744 lr=9.384416e-04
+[transformer] Epoch 18/30, Step 500/703 (global step: 12451) Partial Avg Loss: 6.0431 lr=9.347970e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step12500.pt
 
-[transformer] Generating sample text (greedy) at epoch=18, step=609...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=18, step=609...
- Top-p (p=0.95) Sample: Once upon a time, there was a bigSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribeSubscribe. One
+[transformer] Generating sample text (greedy) at epoch=18, step=558...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=18, step=558...
+ Top-p (p=0.95) Sample: Once upon a very brokerage scared road!!, then!!. he Nur murderous! he they,.!
 
-[transformer] Epoch 18/30, Step 700/703 (global step: 12651) Partial Avg Loss: 2.6722 lr=9.272168e-04
-[transformer] *** End of Epoch 18 *** Avg Train Loss: 2.7186
+[transformer] Epoch 18/30, Step 600/703 (global step: 12551) Partial Avg Loss: 6.0298 lr=9.310551e-04
+[transformer] Epoch 18/30, Step 700/703 (global step: 12651) Partial Avg Loss: 6.0266 lr=9.272168e-04
+[transformer] *** End of Epoch 18 *** Avg Train Loss: 6.0380
 [transformer] Running validation for epoch 18...
-[transformer] *** Epoch 18 Validation Loss ***: 2.8760  Acc: 0.5781
+[transformer] *** Epoch 18 Validation Loss ***: 6.0672  Acc: 0.2382
 --------------------------------------------------
-[transformer] Epoch 19/30, Step 100/703 (global step: 12754) Partial Avg Loss: 2.6747 lr=9.231633e-04
-[transformer] Epoch 19/30, Step 200/703 (global step: 12854) Partial Avg Loss: 2.6531 lr=9.191318e-04
-[transformer] Epoch 19/30, Step 300/703 (global step: 12954) Partial Avg Loss: 2.6635 lr=9.150065e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step13000.pt
+[transformer] Epoch 19/30, Step 100/703 (global step: 12754) Partial Avg Loss: 6.0281 lr=9.231633e-04
+[transformer] Epoch 19/30, Step 200/703 (global step: 12854) Partial Avg Loss: 6.0595 lr=9.191318e-04
+[transformer] Epoch 19/30, Step 300/703 (global step: 12954) Partial Avg Loss: 6.0359 lr=9.150065e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step13000.pt
 
-[transformer] Generating sample text (greedy) at epoch=19, step=381...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One
-[transformer] Generating sample text (top-p=0.95) at epoch=19, step=381...
- Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Timmy. Timmy loved to play outside in the sun
+[transformer] Generating sample text (greedy) at epoch=19, step=346...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=19, step=346...
+ Top-p (p=0.95) Sample: Once upon a!! little! mom cried. are Boom had can! door to very in feel mom! the
 
-[transformer] Epoch 19/30, Step 400/703 (global step: 13054) Partial Avg Loss: 2.6488 lr=9.107883e-04
-[transformer] Epoch 19/30, Step 500/703 (global step: 13154) Partial Avg Loss: 2.6445 lr=9.064782e-04
-[transformer] Epoch 19/30, Step 600/703 (global step: 13254) Partial Avg Loss: 2.6444 lr=9.020771e-04
-[transformer] Epoch 19/30, Step 700/703 (global step: 13354) Partial Avg Loss: 2.6242 lr=8.975860e-04
-[transformer] *** End of Epoch 19 *** Avg Train Loss: 2.6507
+[transformer] Epoch 19/30, Step 400/703 (global step: 13054) Partial Avg Loss: 6.0522 lr=9.107883e-04
+[transformer] Epoch 19/30, Step 500/703 (global step: 13154) Partial Avg Loss: 6.0368 lr=9.064782e-04
+[transformer] Epoch 19/30, Step 600/703 (global step: 13254) Partial Avg Loss: 6.0387 lr=9.020771e-04
+[transformer] Epoch 19/30, Step 700/703 (global step: 13354) Partial Avg Loss: 5.9851 lr=8.975860e-04
+[transformer] *** End of Epoch 19 *** Avg Train Loss: 6.0336
 [transformer] Running validation for epoch 19...
-[transformer] *** Epoch 19 Validation Loss ***: 2.8356  Acc: 0.5788
+[transformer] *** Epoch 19 Validation Loss ***: 6.0352  Acc: 0.2437
 --------------------------------------------------
-[transformer] Epoch 20/30, Step 100/703 (global step: 13457) Partial Avg Loss: 2.6123 lr=8.928672e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step13500.pt
+[transformer] Epoch 20/30, Step 100/703 (global step: 13457) Partial Avg Loss: 5.9788 lr=8.928672e-04
 
-[transformer] Generating sample text (greedy) at epoch=20, step=152...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=20, step=152...
- Top-p (p=0.95) Sample: Once upon a time, there was a cross. He wanted to buy something to eat, but he wanted to see
+[transformer] Generating sample text (greedy) at epoch=20, step=139...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=20, step=139...
+ Top-p (p=0.95) Sample: Once upon a a them the mom! to owner."
+ y! the!! came She ball! day!
 
-[transformer] Epoch 20/30, Step 200/703 (global step: 13557) Partial Avg Loss: 2.6032 lr=8.881966e-04
-[transformer] Epoch 20/30, Step 300/703 (global step: 13657) Partial Avg Loss: 2.5759 lr=8.834391e-04
-[transformer] Epoch 20/30, Step 400/703 (global step: 13757) Partial Avg Loss: 2.5881 lr=8.785957e-04
-[transformer] Epoch 20/30, Step 500/703 (global step: 13857) Partial Avg Loss: 2.5747 lr=8.736677e-04
-[transformer] Epoch 20/30, Step 600/703 (global step: 13957) Partial Avg Loss: 2.5506 lr=8.686560e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step14000.pt
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step13500.pt
+[transformer] Epoch 20/30, Step 200/703 (global step: 13557) Partial Avg Loss: 6.0048 lr=8.881966e-04
+[transformer] Epoch 20/30, Step 300/703 (global step: 13657) Partial Avg Loss: 6.0074 lr=8.834391e-04
+[transformer] Epoch 20/30, Step 400/703 (global step: 13757) Partial Avg Loss: 6.0176 lr=8.785957e-04
+[transformer] Epoch 20/30, Step 500/703 (global step: 13857) Partial Avg Loss: 6.0512 lr=8.736677e-04
+[transformer] Epoch 20/30, Step 600/703 (global step: 13957) Partial Avg Loss: 6.0079 lr=8.686560e-04
 
-[transformer] Generating sample text (greedy) at epoch=20, step=645...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=20, step=645...
- Top-p (p=0.95) Sample: Once upon a time, there was a friend named Billy. Billy lived in a Paul. Billy loved to play with
+[transformer] Generating sample text (greedy) at epoch=20, step=632...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=20, step=632...
+ Top-p (p=0.95) Sample: Once upon a!! moved. Kath!? they!  my. for.! in of.,,
 
-[transformer] Epoch 20/30, Step 700/703 (global step: 14057) Partial Avg Loss: 2.5514 lr=8.635619e-04
-[transformer] *** End of Epoch 20 *** Avg Train Loss: 2.5794
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step14000.pt
+[transformer] Epoch 20/30, Step 700/703 (global step: 14057) Partial Avg Loss: 5.9869 lr=8.635619e-04
+[transformer] *** End of Epoch 20 *** Avg Train Loss: 6.0074
 [transformer] Running validation for epoch 20...
-[transformer] *** Epoch 20 Validation Loss ***: 2.8186  Acc: 0.5811
+[transformer] *** Epoch 20 Validation Loss ***: 6.0578  Acc: 0.2412
 --------------------------------------------------
-[transformer] Epoch 21/30, Step 100/703 (global step: 14160) Partial Avg Loss: 2.5546 lr=8.582298e-04
-[transformer] Epoch 21/30, Step 200/703 (global step: 14260) Partial Avg Loss: 2.5543 lr=8.529717e-04
-[transformer] Epoch 21/30, Step 300/703 (global step: 14360) Partial Avg Loss: 2.5375 lr=8.476346e-04
-[transformer] Epoch 21/30, Step 400/703 (global step: 14460) Partial Avg Loss: 2.5357 lr=8.422197e-04
+[transformer] Epoch 21/30, Step 100/703 (global step: 14160) Partial Avg Loss: 6.0194 lr=8.582298e-04
+[transformer] Epoch 21/30, Step 200/703 (global step: 14260) Partial Avg Loss: 5.9964 lr=8.529717e-04
+[transformer] Epoch 21/30, Step 300/703 (global step: 14360) Partial Avg Loss: 6.0204 lr=8.476346e-04
+[transformer] Epoch 21/30, Step 400/703 (global step: 14460) Partial Avg Loss: 6.0709 lr=8.422197e-04
 
-[transformer] Generating sample text (greedy) at epoch=21, step=439...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=21, step=439...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the mud. One
+[transformer] Generating sample text (greedy) at epoch=21, step=402...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=21, step=402...
+ Top-p (p=0.95) Sample: Once upon a!" upset! theTom were way From! would! lived! inside to! decided. he man
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step14500.pt
-[transformer] Epoch 21/30, Step 500/703 (global step: 14560) Partial Avg Loss: 2.5068 lr=8.367281e-04
-[transformer] Epoch 21/30, Step 600/703 (global step: 14660) Partial Avg Loss: 2.5248 lr=8.311613e-04
-[transformer] Epoch 21/30, Step 700/703 (global step: 14760) Partial Avg Loss: 2.5126 lr=8.255203e-04
-[transformer] *** End of Epoch 21 *** Avg Train Loss: 2.5320
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step14500.pt
+[transformer] Epoch 21/30, Step 500/703 (global step: 14560) Partial Avg Loss: 6.0100 lr=8.367281e-04
+[transformer] Epoch 21/30, Step 600/703 (global step: 14660) Partial Avg Loss: 6.0215 lr=8.311613e-04
+[transformer] Epoch 21/30, Step 700/703 (global step: 14760) Partial Avg Loss: 5.9938 lr=8.255203e-04
+[transformer] *** End of Epoch 21 *** Avg Train Loss: 6.0187
 [transformer] Running validation for epoch 21...
-[transformer] *** Epoch 21 Validation Loss ***: 2.7683  Acc: 0.5876
+[transformer] *** Epoch 21 Validation Loss ***: 6.0312  Acc: 0.2416
 --------------------------------------------------
-[transformer] Epoch 22/30, Step 100/703 (global step: 14863) Partial Avg Loss: 2.4964 lr=8.196340e-04
-[transformer] Epoch 22/30, Step 200/703 (global step: 14963) Partial Avg Loss: 2.5020 lr=8.138464e-04
+[transformer] Epoch 22/30, Step 100/703 (global step: 14863) Partial Avg Loss: 5.9859 lr=8.196340e-04
 
-[transformer] Generating sample text (greedy) at epoch=22, step=211...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her friends
-[transformer] Generating sample text (top-p=0.95) at epoch=22, step=211...
- Top-p (p=0.95) Sample: Once upon a time, there was a naughty little girl named Sue. She had a small hold hold she loved to
+[transformer] Generating sample text (greedy) at epoch=22, step=172...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=22, step=172...
+ Top-p (p=0.95) Sample: Once upon a to skipped could! shining swe of.!
+But you tried reorgan and! fun he Ok looked
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step15000.pt
-[transformer] Epoch 22/30, Step 300/703 (global step: 15063) Partial Avg Loss: 2.5173 lr=8.079887e-04
-[transformer] Epoch 22/30, Step 400/703 (global step: 15163) Partial Avg Loss: 2.4924 lr=8.020620e-04
-[transformer] Epoch 22/30, Step 500/703 (global step: 15263) Partial Avg Loss: 2.4881 lr=7.960677e-04
-[transformer] Epoch 22/30, Step 600/703 (global step: 15363) Partial Avg Loss: 2.4716 lr=7.900071e-04
-[transformer] Epoch 22/30, Step 700/703 (global step: 15463) Partial Avg Loss: 2.4806 lr=7.838817e-04
-[transformer] *** End of Epoch 22 *** Avg Train Loss: 2.4922
+[transformer] Epoch 22/30, Step 200/703 (global step: 14963) Partial Avg Loss: 6.0161 lr=8.138464e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step15000.pt
+[transformer] Epoch 22/30, Step 300/703 (global step: 15063) Partial Avg Loss: 6.0122 lr=8.079887e-04
+[transformer] Epoch 22/30, Step 400/703 (global step: 15163) Partial Avg Loss: 6.0256 lr=8.020620e-04
+[transformer] Epoch 22/30, Step 500/703 (global step: 15263) Partial Avg Loss: 5.9990 lr=7.960677e-04
+[transformer] Epoch 22/30, Step 600/703 (global step: 15363) Partial Avg Loss: 6.0117 lr=7.900071e-04
+
+[transformer] Generating sample text (greedy) at epoch=22, step=664...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=22, step=664...
+ Top-p (p=0.95) Sample: Once upon a,.!! them tried Different! can
+ she!It playing! wind a! brown
+
+[transformer] Epoch 22/30, Step 700/703 (global step: 15463) Partial Avg Loss: 6.0157 lr=7.838817e-04
+[transformer] *** End of Epoch 22 *** Avg Train Loss: 6.0091
 [transformer] Running validation for epoch 22...
-[transformer] *** Epoch 22 Validation Loss ***: 2.7500  Acc: 0.5855
+[transformer] *** Epoch 22 Validation Loss ***: 6.0142  Acc: 0.2437
 --------------------------------------------------
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step15500.pt
+[transformer] Epoch 23/30, Step 100/703 (global step: 15566) Partial Avg Loss: 6.0071 lr=7.775061e-04
+[transformer] Epoch 23/30, Step 200/703 (global step: 15666) Partial Avg Loss: 5.9949 lr=7.712531e-04
+[transformer] Epoch 23/30, Step 300/703 (global step: 15766) Partial Avg Loss: 6.0069 lr=7.649394e-04
+[transformer] Epoch 23/30, Step 400/703 (global step: 15866) Partial Avg Loss: 6.0156 lr=7.585665e-04
 
-[transformer] Generating sample text (greedy) at epoch=23, step=1...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sun. One
-[transformer] Generating sample text (top-p=0.95) at epoch=23, step=1...
- Top-p (p=0.95) Sample: Once upon a time, there was a mommy and a daddy. They were best friends and loved to play together
+[transformer] Generating sample text (greedy) at epoch=23, step=434...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=23, step=434...
+ Top-p (p=0.95) Sample: Once upon a!!
+ be wallet harbor!ip careful! Bowser!.!Let!! frightened with that
 
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step15500.pt
-[transformer] Epoch 23/30, Step 100/703 (global step: 15566) Partial Avg Loss: 2.4457 lr=7.775061e-04
-[transformer] Epoch 23/30, Step 200/703 (global step: 15666) Partial Avg Loss: 2.4639 lr=7.712531e-04
-[transformer] Epoch 23/30, Step 300/703 (global step: 15766) Partial Avg Loss: 2.4302 lr=7.649394e-04
-[transformer] Epoch 23/30, Step 400/703 (global step: 15866) Partial Avg Loss: 2.4442 lr=7.585665e-04
-
-[transformer] Generating sample text (greedy) at epoch=23, step=495...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=23, step=495...
- Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Tim. He loved to Warden from the house. One day
-
-[transformer] Epoch 23/30, Step 500/703 (global step: 15966) Partial Avg Loss: 2.4267 lr=7.521356e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step16000.pt
-[transformer] Epoch 23/30, Step 600/703 (global step: 16066) Partial Avg Loss: 2.4323 lr=7.456484e-04
-[transformer] Epoch 23/30, Step 700/703 (global step: 16166) Partial Avg Loss: 2.4301 lr=7.391061e-04
-[transformer] *** End of Epoch 23 *** Avg Train Loss: 2.4388
+[transformer] Epoch 23/30, Step 500/703 (global step: 15966) Partial Avg Loss: 6.0127 lr=7.521356e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step16000.pt
+[transformer] Epoch 23/30, Step 600/703 (global step: 16066) Partial Avg Loss: 6.0224 lr=7.456484e-04
+[transformer] Epoch 23/30, Step 700/703 (global step: 16166) Partial Avg Loss: 6.0008 lr=7.391061e-04
+[transformer] *** End of Epoch 23 *** Avg Train Loss: 6.0086
 [transformer] Running validation for epoch 23...
-[transformer] *** Epoch 23 Validation Loss ***: 2.7466  Acc: 0.5874
+[transformer] *** Epoch 23 Validation Loss ***: 6.0384  Acc: 0.2416
 --------------------------------------------------
-[transformer] Epoch 24/30, Step 100/703 (global step: 16269) Partial Avg Loss: 2.4222 lr=7.323117e-04
-[transformer] Epoch 24/30, Step 200/703 (global step: 16369) Partial Avg Loss: 2.3984 lr=7.256624e-04
+[transformer] Epoch 24/30, Step 100/703 (global step: 16269) Partial Avg Loss: 6.0107 lr=7.323117e-04
+[transformer] Epoch 24/30, Step 200/703 (global step: 16369) Partial Avg Loss: 6.0194 lr=7.256624e-04
 
-[transformer] Generating sample text (greedy) at epoch=24, step=267...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=24, step=267...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to run and play outside. One day
+[transformer] Generating sample text (greedy) at epoch=24, step=204...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=24, step=204...
+ Top-p (p=0.95) Sample: Once upon a, fun., bids out she on !! friends his. can The and. her widen
 
-[transformer] Epoch 24/30, Step 300/703 (global step: 16469) Partial Avg Loss: 2.4089 lr=7.189626e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step16500.pt
-[transformer] Epoch 24/30, Step 400/703 (global step: 16569) Partial Avg Loss: 2.4017 lr=7.122137e-04
-[transformer] Epoch 24/30, Step 500/703 (global step: 16669) Partial Avg Loss: 2.3927 lr=7.054174e-04
-[transformer] Epoch 24/30, Step 600/703 (global step: 16769) Partial Avg Loss: 2.3806 lr=6.985752e-04
-[transformer] Epoch 24/30, Step 700/703 (global step: 16869) Partial Avg Loss: 2.3958 lr=6.916884e-04
-[transformer] *** End of Epoch 24 *** Avg Train Loss: 2.4001
+[transformer] Epoch 24/30, Step 300/703 (global step: 16469) Partial Avg Loss: 6.0180 lr=7.189626e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step16500.pt
+[transformer] Epoch 24/30, Step 400/703 (global step: 16569) Partial Avg Loss: 6.0262 lr=7.122137e-04
+[transformer] Epoch 24/30, Step 500/703 (global step: 16669) Partial Avg Loss: 5.9903 lr=7.054174e-04
+[transformer] Epoch 24/30, Step 600/703 (global step: 16769) Partial Avg Loss: 6.0322 lr=6.985752e-04
+
+[transformer] Generating sample text (greedy) at epoch=24, step=696...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=24, step=696...
+ Top-p (p=0.95) Sample: Once upon a they's! good to. met Overse decided and! a garden, on was The play I yes
+
+[transformer] Epoch 24/30, Step 700/703 (global step: 16869) Partial Avg Loss: 6.0213 lr=6.916884e-04
+[transformer] *** End of Epoch 24 *** Avg Train Loss: 6.0167
 [transformer] Running validation for epoch 24...
-[transformer] *** Epoch 24 Validation Loss ***: 2.7409  Acc: 0.5875
+[transformer] *** Epoch 24 Validation Loss ***: 6.0700  Acc: 0.2382
 --------------------------------------------------
+[transformer] Epoch 25/30, Step 100/703 (global step: 16972) Partial Avg Loss: 6.0106 lr=6.845503e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step17000.pt
+[transformer] Epoch 25/30, Step 200/703 (global step: 17072) Partial Avg Loss: 5.9757 lr=6.775781e-04
+[transformer] Epoch 25/30, Step 300/703 (global step: 17172) Partial Avg Loss: 6.0214 lr=6.705662e-04
+[transformer] Epoch 25/30, Step 400/703 (global step: 17272) Partial Avg Loss: 6.0075 lr=6.635160e-04
 
-[transformer] Generating sample text (greedy) at epoch=25, step=39...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=25, step=39...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She had a new bed and she loved to play
+[transformer] Generating sample text (greedy) at epoch=25, step=466...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=25, step=466...
+ Top-p (p=0.95) Sample: Once upon a made! say!! theyassad. to Bob it upon watch! the, not her. Mama
 
-[transformer] Epoch 25/30, Step 100/703 (global step: 16972) Partial Avg Loss: 2.3712 lr=6.845503e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step17000.pt
-[transformer] Epoch 25/30, Step 200/703 (global step: 17072) Partial Avg Loss: 2.3636 lr=6.775781e-04
-[transformer] Epoch 25/30, Step 300/703 (global step: 17172) Partial Avg Loss: 2.3707 lr=6.705662e-04
-[transformer] Epoch 25/30, Step 400/703 (global step: 17272) Partial Avg Loss: 2.3805 lr=6.635160e-04
-[transformer] Epoch 25/30, Step 500/703 (global step: 17372) Partial Avg Loss: 2.3735 lr=6.564294e-04
-
-[transformer] Generating sample text (greedy) at epoch=25, step=532...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her favorite
-[transformer] Generating sample text (top-p=0.95) at epoch=25, step=532...
- Top-p (p=0.95) Sample: Once upon a time there was a seemed seemed to splash. It wasuj so fun!
-
-One day something
-
-[transformer] Epoch 25/30, Step 600/703 (global step: 17472) Partial Avg Loss: 2.3484 lr=6.493077e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step17500.pt
-[transformer] Epoch 25/30, Step 700/703 (global step: 17572) Partial Avg Loss: 2.3563 lr=6.421525e-04
-[transformer] *** End of Epoch 25 *** Avg Train Loss: 2.3663
+[transformer] Epoch 25/30, Step 500/703 (global step: 17372) Partial Avg Loss: 5.9935 lr=6.564294e-04
+[transformer] Epoch 25/30, Step 600/703 (global step: 17472) Partial Avg Loss: 6.0431 lr=6.493077e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step17500.pt
+[transformer] Epoch 25/30, Step 700/703 (global step: 17572) Partial Avg Loss: 6.0138 lr=6.421525e-04
+[transformer] *** End of Epoch 25 *** Avg Train Loss: 6.0090
 [transformer] Running validation for epoch 25...
-[transformer] *** Epoch 25 Validation Loss ***: 2.7296  Acc: 0.5899
+[transformer] *** Epoch 25 Validation Loss ***: 6.0281  Acc: 0.2433
 --------------------------------------------------
-[transformer] Epoch 26/30, Step 100/703 (global step: 17675) Partial Avg Loss: 2.3435 lr=6.347495e-04
-[transformer] Epoch 26/30, Step 200/703 (global step: 17775) Partial Avg Loss: 2.3417 lr=6.275315e-04
-[transformer] Epoch 26/30, Step 300/703 (global step: 17875) Partial Avg Loss: 2.3234 lr=6.202850e-04
+[transformer] Epoch 26/30, Step 100/703 (global step: 17675) Partial Avg Loss: 5.9703 lr=6.347495e-04
+[transformer] Epoch 26/30, Step 200/703 (global step: 17775) Partial Avg Loss: 6.0127 lr=6.275315e-04
 
-[transformer] Generating sample text (greedy) at epoch=26, step=303...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=26, step=303...
- Top-p (p=0.95) Sample: Once upon a time, there was a big, heavy bird. The bird loved the way, lying on her friend
+[transformer] Generating sample text (greedy) at epoch=26, step=236...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=26, step=236...
+ Top-p (p=0.95) Sample: Once upon a!, year smiled a! said broken started Tim!! .,'s.! and!
 
-[transformer] Epoch 26/30, Step 400/703 (global step: 17975) Partial Avg Loss: 2.3392 lr=6.130115e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step18000.pt
-[transformer] Epoch 26/30, Step 500/703 (global step: 18075) Partial Avg Loss: 2.3199 lr=6.057127e-04
-[transformer] Epoch 26/30, Step 600/703 (global step: 18175) Partial Avg Loss: 2.3282 lr=5.983903e-04
-[transformer] Epoch 26/30, Step 700/703 (global step: 18275) Partial Avg Loss: 2.3042 lr=5.910459e-04
-[transformer] *** End of Epoch 26 *** Avg Train Loss: 2.3287
+[transformer] Epoch 26/30, Step 300/703 (global step: 17875) Partial Avg Loss: 6.0106 lr=6.202850e-04
+[transformer] Epoch 26/30, Step 400/703 (global step: 17975) Partial Avg Loss: 5.9905 lr=6.130115e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step18000.pt
+[transformer] Epoch 26/30, Step 500/703 (global step: 18075) Partial Avg Loss: 6.0105 lr=6.057127e-04
+[transformer] Epoch 26/30, Step 600/703 (global step: 18175) Partial Avg Loss: 6.0041 lr=5.983903e-04
+[transformer] Epoch 26/30, Step 700/703 (global step: 18275) Partial Avg Loss: 6.0191 lr=5.910459e-04
+[transformer] *** End of Epoch 26 *** Avg Train Loss: 6.0025
 [transformer] Running validation for epoch 26...
-[transformer] *** Epoch 26 Validation Loss ***: 2.6932  Acc: 0.5929
+[transformer] *** Epoch 26 Validation Loss ***: 6.0502  Acc: 0.2413
 --------------------------------------------------
 
-[transformer] Generating sample text (greedy) at epoch=27, step=75...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and her favorite
-[transformer] Generating sample text (top-p=0.95) at epoch=27, step=75...
- Top-p (p=0.95) Sample: Once upon a time, there was a littleValid. She wanted to play a game butBlockBlock. She had
+[transformer] Generating sample text (greedy) at epoch=27, step=6...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=27, step=6...
+ Top-p (p=0.95) Sample: Once upon a back They Miche!,"The scissors! she didn! was Max that
+ Mia
+ wanted in she
 
-[transformer] Epoch 27/30, Step 100/703 (global step: 18378) Partial Avg Loss: 2.3070 lr=5.834598e-04
-[transformer] Epoch 27/30, Step 200/703 (global step: 18478) Partial Avg Loss: 2.3286 lr=5.760757e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step18500.pt
-[transformer] Epoch 27/30, Step 300/703 (global step: 18578) Partial Avg Loss: 2.2995 lr=5.686746e-04
-[transformer] Epoch 27/30, Step 400/703 (global step: 18678) Partial Avg Loss: 2.3170 lr=5.612581e-04
-[transformer] Epoch 27/30, Step 500/703 (global step: 18778) Partial Avg Loss: 2.2676 lr=5.538279e-04
+[transformer] Epoch 27/30, Step 100/703 (global step: 18378) Partial Avg Loss: 6.0061 lr=5.834598e-04
+[transformer] Epoch 27/30, Step 200/703 (global step: 18478) Partial Avg Loss: 6.0143 lr=5.760757e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step18500.pt
+[transformer] Epoch 27/30, Step 300/703 (global step: 18578) Partial Avg Loss: 5.9850 lr=5.686746e-04
+[transformer] Epoch 27/30, Step 400/703 (global step: 18678) Partial Avg Loss: 5.9986 lr=5.612581e-04
 
-[transformer] Generating sample text (greedy) at epoch=27, step=568...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One
-[transformer] Generating sample text (top-p=0.95) at epoch=27, step=568...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the grass. One
+[transformer] Generating sample text (greedy) at epoch=27, step=497...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=27, step=497...
+ Top-p (p=0.95) Sample: Once upon a shrugged everyone! sunrise!!! eyes, day!amummy Tim wants was and! when not
 
-[transformer] Epoch 27/30, Step 600/703 (global step: 18878) Partial Avg Loss: 2.2973 lr=5.463857e-04
-[transformer] Epoch 27/30, Step 700/703 (global step: 18978) Partial Avg Loss: 2.2644 lr=5.389331e-04
-[transformer] *** End of Epoch 27 *** Avg Train Loss: 2.2971
+[transformer] Epoch 27/30, Step 500/703 (global step: 18778) Partial Avg Loss: 5.9819 lr=5.538279e-04
+[transformer] Epoch 27/30, Step 600/703 (global step: 18878) Partial Avg Loss: 5.9986 lr=5.463857e-04
+[transformer] Epoch 27/30, Step 700/703 (global step: 18978) Partial Avg Loss: 6.0195 lr=5.389331e-04
+[transformer] *** End of Epoch 27 *** Avg Train Loss: 6.0004
 [transformer] Running validation for epoch 27...
-[transformer] *** Epoch 27 Validation Loss ***: 2.6893  Acc: 0.5952
+[transformer] *** Epoch 27 Validation Loss ***: 6.0487  Acc: 0.2407
 --------------------------------------------------
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step19000.pt
-[transformer] Epoch 28/30, Step 100/703 (global step: 19081) Partial Avg Loss: 2.2928 lr=5.312478e-04
-[transformer] Epoch 28/30, Step 200/703 (global step: 19181) Partial Avg Loss: 2.2741 lr=5.237793e-04
-[transformer] Epoch 28/30, Step 300/703 (global step: 19281) Partial Avg Loss: 2.2655 lr=5.163054e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step19000.pt
+[transformer] Epoch 28/30, Step 100/703 (global step: 19081) Partial Avg Loss: 6.0038 lr=5.312478e-04
+[transformer] Epoch 28/30, Step 200/703 (global step: 19181) Partial Avg Loss: 6.0048 lr=5.237793e-04
 
-[transformer] Generating sample text (greedy) at epoch=28, step=339...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One
-[transformer] Generating sample text (top-p=0.95) at epoch=28, step=339...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She had a pretty pink dress and loved to wear
+[transformer] Generating sample text (greedy) at epoch=28, step=267...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=28, step=267...
+ Top-p (p=0.95) Sample: Once upon a was!
+ the
+ what but
+ a house parents blue because and was! lady found it!
 
-[transformer] Epoch 28/30, Step 400/703 (global step: 19381) Partial Avg Loss: 2.2595 lr=5.088279e-04
-[transformer] Epoch 28/30, Step 500/703 (global step: 19481) Partial Avg Loss: 2.2617 lr=5.013484e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step19500.pt
-[transformer] Epoch 28/30, Step 600/703 (global step: 19581) Partial Avg Loss: 2.2549 lr=4.938686e-04
-[transformer] Epoch 28/30, Step 700/703 (global step: 19681) Partial Avg Loss: 2.2648 lr=4.863902e-04
-[transformer] *** End of Epoch 28 *** Avg Train Loss: 2.2678
+[transformer] Epoch 28/30, Step 300/703 (global step: 19281) Partial Avg Loss: 5.9967 lr=5.163054e-04
+[transformer] Epoch 28/30, Step 400/703 (global step: 19381) Partial Avg Loss: 5.9954 lr=5.088279e-04
+[transformer] Epoch 28/30, Step 500/703 (global step: 19481) Partial Avg Loss: 5.9901 lr=5.013484e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step19500.pt
+[transformer] Epoch 28/30, Step 600/703 (global step: 19581) Partial Avg Loss: 6.0183 lr=4.938686e-04
+[transformer] Epoch 28/30, Step 700/703 (global step: 19681) Partial Avg Loss: 6.0215 lr=4.863902e-04
+[transformer] *** End of Epoch 28 *** Avg Train Loss: 6.0043
 [transformer] Running validation for epoch 28...
-[transformer] *** Epoch 28 Validation Loss ***: 2.7111  Acc: 0.5947
+[transformer] *** Epoch 28 Validation Loss ***: 6.0162  Acc: 0.2439
 --------------------------------------------------
-[transformer] Epoch 29/30, Step 100/703 (global step: 19784) Partial Avg Loss: 2.2600 lr=4.786906e-04
 
-[transformer] Generating sample text (greedy) at epoch=29, step=111...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the garden. One
-[transformer] Generating sample text (top-p=0.95) at epoch=29, step=111...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to eat candy, especially remember remember to
+[transformer] Generating sample text (greedy) at epoch=29, step=36...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=29, step=36...
+ Top-p (p=0.95) Sample: Once upon a tree,! the! and!
+!!ill went!! the! have Everton, many
 
-[transformer] Epoch 29/30, Step 200/703 (global step: 19884) Partial Avg Loss: 2.2510 lr=4.712201e-04
-[transformer] Epoch 29/30, Step 300/703 (global step: 19984) Partial Avg Loss: 2.2448 lr=4.637561e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step20000.pt
-[transformer] Epoch 29/30, Step 400/703 (global step: 20084) Partial Avg Loss: 2.2382 lr=4.563001e-04
-[transformer] Epoch 29/30, Step 500/703 (global step: 20184) Partial Avg Loss: 2.2519 lr=4.488540e-04
-[transformer] Epoch 29/30, Step 600/703 (global step: 20284) Partial Avg Loss: 2.2491 lr=4.414192e-04
+[transformer] Epoch 29/30, Step 100/703 (global step: 19784) Partial Avg Loss: 6.0187 lr=4.786906e-04
+[transformer] Epoch 29/30, Step 200/703 (global step: 19884) Partial Avg Loss: 6.0289 lr=4.712201e-04
+[transformer] Epoch 29/30, Step 300/703 (global step: 19984) Partial Avg Loss: 5.9854 lr=4.637561e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step20000.pt
+[transformer] Epoch 29/30, Step 400/703 (global step: 20084) Partial Avg Loss: 5.9958 lr=4.563001e-04
+[transformer] Epoch 29/30, Step 500/703 (global step: 20184) Partial Avg Loss: 6.0013 lr=4.488540e-04
 
-[transformer] Generating sample text (greedy) at epoch=29, step=605...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play outside in the garden. One
-[transformer] Generating sample text (top-p=0.95) at epoch=29, step=605...
- Top-p (p=0.95) Sample: Once upon a time, there was a little girl named Lily. She loved to play outside and explore the world around
+[transformer] Generating sample text (greedy) at epoch=29, step=527...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=29, step=527...
+ Top-p (p=0.95) Sample: Once upon a!..!um close it remember thereaff! fly.! to in!!!!
 
-[transformer] Epoch 29/30, Step 700/703 (global step: 20384) Partial Avg Loss: 2.2544 lr=4.339976e-04
-[transformer] *** End of Epoch 29 *** Avg Train Loss: 2.2501
+[transformer] Epoch 29/30, Step 600/703 (global step: 20284) Partial Avg Loss: 5.9709 lr=4.414192e-04
+[transformer] Epoch 29/30, Step 700/703 (global step: 20384) Partial Avg Loss: 6.0159 lr=4.339976e-04
+[transformer] *** End of Epoch 29 *** Avg Train Loss: 6.0030
 [transformer] Running validation for epoch 29...
-[transformer] *** Epoch 29 Validation Loss ***: 2.6958  Acc: 0.5949
+[transformer] *** Epoch 29 Validation Loss ***: 6.0593  Acc: 0.2386
 --------------------------------------------------
-[transformer] Epoch 30/30, Step 100/703 (global step: 20487) Partial Avg Loss: 2.2314 lr=4.263689e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step20500.pt
-[transformer] Epoch 30/30, Step 200/703 (global step: 20587) Partial Avg Loss: 2.2343 lr=4.189790e-04
-[transformer] Epoch 30/30, Step 300/703 (global step: 20687) Partial Avg Loss: 2.2296 lr=4.116072e-04
+[transformer] Epoch 30/30, Step 100/703 (global step: 20487) Partial Avg Loss: 6.0021 lr=4.263689e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step20500.pt
+[transformer] Epoch 30/30, Step 200/703 (global step: 20587) Partial Avg Loss: 6.0245 lr=4.189790e-04
 
-[transformer] Generating sample text (greedy) at epoch=30, step=376...
- Greedy Sample: Once upon a time, there was a little girl named Lily. She loved to play with her toys and run around
-[transformer] Generating sample text (top-p=0.95) at epoch=30, step=376...
- Top-p (p=0.95) Sample: Once upon a time, there was a little boy named Timmy. Timmy loved to play with his toys,
+[transformer] Generating sample text (greedy) at epoch=30, step=297...
+ Greedy Sample: Once upon a!!!!!!!!!!!!!!!!!!!!
+[transformer] Generating sample text (top-p=0.95) at epoch=30, step=297...
+ Top-p (p=0.95) Sample: Once upon aThe mustache for
+,! and! a voice someBut IIt, were's didn Max!"
 
-[transformer] Epoch 30/30, Step 400/703 (global step: 20787) Partial Avg Loss: 2.2299 lr=4.042553e-04
-[transformer] Epoch 30/30, Step 500/703 (global step: 20887) Partial Avg Loss: 2.2293 lr=3.969247e-04
-[transformer] Epoch 30/30, Step 600/703 (global step: 20987) Partial Avg Loss: 2.2237 lr=3.896172e-04
-[transformer] Saved checkpoint: ckpt/tinystories_transformer/transformer_step21000.pt
-[transformer] Epoch 30/30, Step 700/703 (global step: 21087) Partial Avg Loss: 2.2328 lr=3.823345e-04
-[transformer] *** End of Epoch 30 *** Avg Train Loss: 2.2301
+[transformer] Epoch 30/30, Step 300/703 (global step: 20687) Partial Avg Loss: 6.0231 lr=4.116072e-04
+[transformer] Epoch 30/30, Step 400/703 (global step: 20787) Partial Avg Loss: 6.0115 lr=4.042553e-04
+[transformer] Epoch 30/30, Step 500/703 (global step: 20887) Partial Avg Loss: 5.9952 lr=3.969247e-04
+[transformer] Epoch 30/30, Step 600/703 (global step: 20987) Partial Avg Loss: 6.0175 lr=3.896172e-04
+[transformer] Saved checkpoint: ckpt/tinystories_transformer_post_norm/transformer_step21000.pt
+[transformer] Epoch 30/30, Step 700/703 (global step: 21087) Partial Avg Loss: 5.9724 lr=3.823345e-04
+[transformer] *** End of Epoch 30 *** Avg Train Loss: 6.0070
 [transformer] Running validation for epoch 30...
-[transformer] *** Epoch 30 Validation Loss ***: 2.6994  Acc: 0.5946
+[transformer] *** Epoch 30 Validation Loss ***: 6.0309  Acc: 0.2435
 --------------------------------------------------
-[transformer] Saved final checkpoint: ckpt/tinystories_transformer/transformer_final.pt
-wandb: ⢿ updating run metadata (0.0s)
-wandb: ⣻ updating run metadata (0.0s)
-wandb: ⣽ updating run metadata (0.0s)
-wandb: ⣾ updating run metadata (0.0s)
-wandb: ⣷ uploading output.log 47.8KB/47.8KB (0.3s)
-wandb: ⣷ uploading wandb-summary.json 302B/302B (0.3s)
-wandb: ⣷ uploading config.yaml 2.0KB/2.0KB (0.1s)
-wandb: ⣯ uploading output.log 47.8KB/47.8KB (0.3s)
-wandb: ⣯ uploading wandb-summary.json 302B/302B (0.3s)
-wandb: ⣯ uploading config.yaml 2.0KB/2.0KB (0.1s)
-wandb: ⣟ uploading output.log 47.8KB/47.8KB (0.3s)
-wandb: ⣟ uploading wandb-summary.json 302B/302B (0.3s)
-wandb: ⣟ uploading config.yaml 2.0KB/2.0KB (0.1s)
-wandb: ⡿ uploading output.log 47.8KB/47.8KB (0.3s)
-wandb: ⡿ uploading wandb-summary.json 302B/302B (0.3s)
-wandb: ⡿ uploading config.yaml 2.0KB/2.0KB (0.1s)
-wandb: ⢿ uploading output.log 47.8KB/47.8KB (0.3s)
-wandb: ⢿ uploading wandb-summary.json 302B/302B (0.3s)
-wandb: ⢿ uploading config.yaml 2.0KB/2.0KB (0.1s)
-wandb: ⣻ uploading history steps 237-239, summary, console lines 634-639 (0.1s)
+[transformer] Saved final checkpoint: ckpt/tinystories_transformer_post_norm/transformer_final.pt
+wandb: ⢿ uploading history steps 237-238, summary, console lines 650-655 (0.1s)
+wandb: ⣻ uploading history steps 237-238, summary, console lines 650-655 (0.1s)
+wandb: ⣽ uploading history steps 237-238, summary, console lines 650-655 (0.1s)
+wandb: ⣾ uploading history steps 237-238, summary, console lines 650-655 (0.1s)
+wandb: ⣷ uploading output.log 44.9KB/44.9KB (0.1s)
+wandb: ⣷ uploading wandb-summary.json 303B/303B (0.1s)
+wandb: ⣯ uploading output.log 44.9KB/44.9KB (0.1s)
+wandb: ⣯ uploading wandb-summary.json 303B/303B (0.1s)
+wandb: ⣟ uploading output.log 44.9KB/44.9KB (0.1s)
+wandb: ⣟ uploading wandb-summary.json 303B/303B (0.1s)
+wandb: ⡿ uploading output.log 44.9KB/44.9KB (0.1s)
+wandb: ⡿ uploading wandb-summary.json 303B/303B (0.1s)
+wandb: ⢿ uploading output.log 44.9KB/44.9KB (0.1s)
+wandb: ⢿ uploading wandb-summary.json 303B/303B (0.1s)
+wandb: ⣻ uploading output.log 44.9KB/44.9KB (0.6s)
+wandb: ⣻ uploading wandb-summary.json 303B/303B (0.6s)
+wandb: ⣻ uploading config.yaml 2.0KB/2.0KB (0.2s)
+wandb: ⣽ uploading output.log 44.9KB/44.9KB (0.6s)
+wandb: ⣽ uploading wandb-summary.json 303B/303B (0.6s)
+wandb: ⣽ uploading config.yaml 2.0KB/2.0KB (0.2s)
+wandb: ⣾ uploading output.log 44.9KB/44.9KB (0.6s)
+wandb: ⣾ uploading wandb-summary.json 303B/303B (0.6s)
+wandb: ⣾ uploading config.yaml 2.0KB/2.0KB (0.2s)
+wandb: ⣷ uploading output.log 44.9KB/44.9KB (0.6s)
+wandb: ⣷ uploading wandb-summary.json 303B/303B (0.6s)
+wandb: ⣷ uploading config.yaml 2.0KB/2.0KB (0.2s)
+wandb: ⣯ uploading output.log 44.9KB/44.9KB (0.6s)
+wandb: ⣯ uploading wandb-summary.json 303B/303B (0.6s)
+wandb: ⣯ uploading config.yaml 2.0KB/2.0KB (0.2s)
+wandb: ⣟ uploading output.log 44.9KB/44.9KB (1.1s)
+wandb: ⣟ uploading wandb-summary.json 303B/303B (1.1s)
+wandb: ⣟ uploading config.yaml 2.0KB/2.0KB (0.7s)
+wandb: ⡿ uploading output.log 44.9KB/44.9KB (1.1s)
+wandb: ⡿ uploading wandb-summary.json 303B/303B (1.1s)
+wandb: ⡿ uploading config.yaml 2.0KB/2.0KB (0.7s)
+wandb: ⢿ uploading output.log 44.9KB/44.9KB (1.1s)
+wandb: ⢿ uploading wandb-summary.json 303B/303B (1.1s)
+wandb: ⢿ uploading config.yaml 2.0KB/2.0KB (0.7s)
+wandb: ⣻ uploading output.log 44.9KB/44.9KB (1.1s)
+wandb: ⣻ uploading wandb-summary.json 303B/303B (1.1s)
+wandb: ⣻ uploading config.yaml 2.0KB/2.0KB (0.7s)
 wandb: 
 wandb: Run history:
 wandb:              epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
-wandb:        global_step ▁▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▇▇████
-wandb:   train/epoch_loss █▅▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-wandb:           train/lr ▁▂▃▄▄▅▅▆▆▆▇██████████▇▇▇▇▇▇▇▇▇▆▆▆▅▅▅▅▅▅▄
-wandb: train/partial_loss █▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-wandb:            val/acc ▁▁▃▄▄▅▄▅▆▆▆▇▇▇▇▇▇█████████████
-wandb:           val/loss █▇▅▄▃▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        global_step ▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▆▆▆▇▇▇▇▇▇▇████
+wandb:   train/epoch_loss █▅▅▄▂▂▁▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train/lr ▁▁▁▂▂▂▂▃▃▃▄▄▄▅▆▇▇▇██████████▇▇▇▇▇▆▆▆▅▅▄▄
+wandb: train/partial_loss ███▇▇▅▃▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            val/acc ▃▄▅▇▇█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val/loss ▅▅▄▂▂▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 wandb: 
 wandb: Run summary:
 wandb:              epoch 30
 wandb:        global_step 21087
-wandb:   train/epoch_loss 2.23007
+wandb:   train/epoch_loss 6.00696
 wandb:           train/lr 0.00038
-wandb: train/partial_loss 2.23278
-wandb:            val/acc 0.59463
-wandb:           val/loss 2.69937
+wandb: train/partial_loss 5.97236
+wandb:            val/acc 0.24347
+wandb:           val/loss 6.03085
 wandb: 
-wandb: 🚀 View run transformer_20251117_004959 at: https://wandb.ai/sa6740-new-york-university/pico-llm/runs/myj7c808
+wandb: 🚀 View run transformer_20251117_014913 at: https://wandb.ai/sa6740-new-york-university/pico-llm/runs/uw15d58v
 wandb: ⭐️ View project at: https://wandb.ai/sa6740-new-york-university/pico-llm
 wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20251117_004959-myj7c808/logs
+wandb: Find logs at: ./wandb/run-20251117_014913-uw15d58v/logs
 
 --- Final Generation for transformer ---
 [transformer] Final sample (greedy) from prompt: 'Once upon a'
-Once upon a time, there was a little girl named Lily. She loved to play outside in the park with her
+Once upon a!!!!!!!!!!!!!!!!!!!!
 
 [transformer] Final sample (top-p=0.95) from prompt: 'Once upon a'
-Once upon a time there was a little girl. She was three years old and loved to explore.
-
-One
+Once upon a that wanted. Tom. there! cat! it Jill.ouse! her of Grand andmy nurse
 
 [transformer] Final sample (top-p=1.0) from prompt: 'Once upon a'
-Once upon a time, there was a little boy named Max. He had a big tall, fluffyule, but
+Once upon a
+ a! on. She silly! move! men!! it the Mom It, said a
 --------------------------------------------------
 
 *** I'm feeling great today! Hope you're well, too. ***
