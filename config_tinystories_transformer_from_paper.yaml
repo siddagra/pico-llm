@@ -35,5 +35,5 @@ max_steps_per_epoch: null
 # Disable per-step checkpointing (we save at epoch end)
 save_ckpt_steps: 0
 ckpt_dir: ckpt/tinystories_transformer_768_8L  # New dir for the new model
-prompt: "Once upon a"
+
 use_wandb: true
