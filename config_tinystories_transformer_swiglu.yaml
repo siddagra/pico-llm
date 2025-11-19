@@ -18,6 +18,7 @@ n_blocks: 8                  # "Layer" = 8, per the best model in Fig 4
 block_size: 512              # Match "context length 512" from paper 
 norm: pre                    # Pre-norm for more stable training
 weight_tying: true           # Good for small models
+no_pos_emb: true
 
 # --- Optimizer ---
 optimizer: adamw             # Use AdamW when weight decay is desired
@@ -29,11 +30,12 @@ weight_decay: 0.01           # Typical starting WD; adjust as needed
 # --- Performance & Logging ---
 use_bf16: false
 use_amp: true
+use_swiglu: true
 use_flash_attn: true
 # Train full epochs: don't limit steps per epoch (set to null for full pass)
 max_steps_per_epoch: null
 # Disable per-step checkpointing (we save at epoch end)
 save_ckpt_steps: 0
-ckpt_dir: ckpt/tinystories_transformer_768_8L  # New dir for the new model
+ckpt_dir: ckpt/tinystories_transformer_768_8L_swiglu  # New dir for the new model
 prompt: "Once upon a"
 use_wandb: true

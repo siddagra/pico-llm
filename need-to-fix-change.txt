@@ -1,0 +1,3 @@
+add argument for epochs and other hyperparameters
+add argument for model type to train (for example, i may want to train only the transformer)
+allow me to change between pre-norm and post-norm transformer
