@@ -1354,9 +1354,9 @@ def inference_results(model, enc, device, args):
             use_amp=args.use_amp
         )
         
-        print("\n--- Annotated Generation (with monosemantic neighbors) ---")
-        print(annotated_text)
-        print("\n--- Final Raw Text ---")
+        # print("\n--- Annotated Generation (with monosemantic neighbors) ---")
+        # print(annotated_text)
+        # print("\n--- Final Raw Text ---")
         print(final_text)
         print("--------------------------------------------------")
 
